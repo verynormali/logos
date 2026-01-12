@@ -897,10 +897,16 @@
         text-size-adjust: 100%;
       }
 
-      @media (max-width: 480px) {
+      @media screen and (max-width: 450px) {
 
-        /* iPhone: override Markdown Preview Enhanced export rule (14px) */
-        html body[for="html-export"] .markdown-preview {
+        /* iPhone: override Markdown Preview Enhanced export rule (14px !important) */
+        html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+          font-size: 18px !important;
+          line-height: 1.7 !important;
+        }
+
+        /* Also override the sidebar-TOC variant (it has its own 14px rule) */
+        html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
           font-size: 18px !important;
           line-height: 1.7 !important;
         }
@@ -1304,7 +1310,8 @@
       Bellamy.</p>
     <p>Tyto pirátské kodexy představují raný příklad samosprávy mimo rámec národních států. Hakim Bey je ve své knize
       <em>T.A.Z.: The Temporary Autonomous Zone</em> popsal jako příklady dočasných autonomních zón – struktur, které
-      vznikají v mezerách moci, fungují po určitou dobu a poté zanikají.</p>
+      vznikají v mezerách moci, fungují po určitou dobu a poté zanikají.
+    </p>
     <p>Dnes však sledujeme situaci, kdy státy z různých důvodů – technologických, ekonomických i geopolitických –
       postupně opouštějí části své tradiční suverenity. Otázka tedy nezní, zda bude vládnutí existovat i mimo stát, ale
       jak bude vypadat v době, kdy stát ztrácí monopol na výkon moci.</p>
@@ -1315,7 +1322,8 @@
       části tradičních státních funkcí.</p>
     <p>Mezi tyto formy patří menší územní jednotky – města, regiony, zvláštní správní oblasti či daňové okrsky – které
       získávají pravomoci v oblasti infrastruktury, regulace nebo výběru poplatků. V USA jsou typickým příkladem tzv.
-      <em>special taxing districts</em>, které mohou poskytovat veřejné služby nezávisle na klasické obecní správě.</p>
+      <em>special taxing districts</em>, které mohou poskytovat veřejné služby nezávisle na klasické obecní správě.
+    </p>
     <p>Existují však i struktury nadnárodní. Evropská unie postupně vytvořila vlastní právní řád a rozhodovací
       mechanismy, které v mnoha oblastech omezují suverenitu členských států. Suverenita se tak stává rozvrstvenou a
       sdílenou.</p>
