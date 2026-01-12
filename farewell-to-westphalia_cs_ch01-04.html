@@ -1,552 +1,1683 @@
-<!DOCTYPE html><html><head>
-      <title>farewell-to-westphalia_cs_ch01-04</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
-      
-      
-      
-      
-      
-      <style>
-      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+<!DOCTYPE html>
+<html>
 
-      </style>
-      </head><body for="html-export">
-    
-    
-      <div class="crossnote markdown-preview  ">
-      
-<style>
-:root {
-  /* Theme variables (default = dark) */
-  --bg: #0b0b0b;
-  --fg: #f2f2f2;
-  --muted: #c0c0c0;
-  --rule: #444444;
-  --box-bg: #151515;
-  --box-border: #3a3a3a;
-  --quote-border: #5a5a5a;
-  --link: #8ab4ff;
-}
+<head>
+  <title>farewell-to-westphalia_cs_ch01-04</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@page {
-  size: A4;
-  margin: 24mm 26mm 28mm 26mm;
-}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex.min.css">
 
-/* Force override of MPE defaults */
-html body,
-html body[for="html-export"],
-.markdown-preview {
-  background: var(--bg) !important;
-  color: var(--fg) !important;
-  font-size: clamp(16px, 2.2vw, 18px) !important;
-  line-height: 1.6 !important;
-}
 
-html body h1,
-html body h2,
-html body h3,
-html body h4,
-html body h5,
-html body h6 {
-  color: var(--fg) !important;
-}
 
-html, body {
-  font-family: "Times New Roman", Times, serif;
-  line-height: 1.48;
-  hyphens: auto;
-}
 
-@media (max-width: 480px) {
-  h1 { margin-bottom: 6mm; }
-  h2, h3, h4 { margin-top: 5mm; }
-  p { margin-bottom: 4mm; }
-  .vysvetlivka { padding: 4mm 4mm; }
-}
 
-@media print {
-  html, body {
-    font-size: 11pt !important;
-    line-height: 1.48 !important;
-  }
-}
+  <style>
+    code[class*=language-],
+    pre[class*=language-] {
+      color: #333;
+      background: 0 0;
+      font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      word-wrap: normal;
+      line-height: 1.4;
+      -moz-tab-size: 8;
+      -o-tab-size: 8;
+      tab-size: 8;
+      -webkit-hyphens: none;
+      -moz-hyphens: none;
+      -ms-hyphens: none;
+      hyphens: none
+    }
 
-h1 {
-  page-break-before: always;
-  margin-top: 0;
-  margin-bottom: 10mm;
-}
+    pre[class*=language-] {
+      padding: .8em;
+      overflow: auto;
+      border-radius: 3px;
+      background: #f5f5f5
+    }
 
-h2, h3, h4 {
-  page-break-after: avoid;
-  margin-top: 7mm;
-  margin-bottom: 3mm;
-}
+    :not(pre)>code[class*=language-] {
+      padding: .1em;
+      border-radius: .3em;
+      white-space: normal;
+      background: #f5f5f5
+    }
 
-p {
-  margin: 0 0 3.2mm 0;
-}
+    .token.blockquote,
+    .token.comment {
+      color: #969896
+    }
 
-a, a:visited {
-  color: var(--link) !important;
-}
+    .token.cdata {
+      color: #183691
+    }
 
-blockquote {
-  margin: 4mm 0 4mm 8mm;
-  padding-left: 6mm;
-  border-left: 1px solid var(--quote-border);
-  font-style: italic;
-  background: transparent !important;
-}
+    .token.doctype,
+    .token.macro.property,
+    .token.punctuation,
+    .token.variable {
+      color: #333
+    }
 
-hr {
-  margin: 8mm 0;
-  border-color: var(--rule) !important;
-  background-color: var(--rule) !important;
-}
+    .token.builtin,
+    .token.important,
+    .token.keyword,
+    .token.operator,
+    .token.rule {
+      color: #a71d5d
+    }
 
-code, pre {
-  font-family: "Menlo", "SFMono-Regular", ui-monospace, monospace;
-  font-size: 9.8pt;
-}
+    .token.attr-value,
+    .token.regex,
+    .token.string,
+    .token.url {
+      color: #183691
+    }
 
-pre {
-  white-space: pre-wrap;
-}
+    .token.atrule,
+    .token.boolean,
+    .token.code,
+    .token.command,
+    .token.constant,
+    .token.entity,
+    .token.number,
+    .token.property,
+    .token.symbol {
+      color: #0086b3
+    }
 
-table {
-  border-collapse: collapse;
-}
+    .token.prolog,
+    .token.selector,
+    .token.tag {
+      color: #63a35c
+    }
 
-th, td {
-  border: 1px solid var(--rule);
-  padding: 2.5mm 3mm;
-}
+    .token.attr-name,
+    .token.class,
+    .token.class-name,
+    .token.function,
+    .token.id,
+    .token.namespace,
+    .token.pseudo-class,
+    .token.pseudo-element,
+    .token.url-reference .token.variable {
+      color: #795da3
+    }
 
-.vysvetlivka {
-  margin: 3mm 0 5mm 0;
-  padding: 3mm 4mm;
-  border: 1px solid var(--box-border);
-  background: var(--box-bg) !important;
-  page-break-inside: avoid;
-  font-style: italic;
-}
+    .token.entity {
+      cursor: help
+    }
 
-.vysvetlivka-title {
-  font-weight: bold;
-  margin-bottom: 2mm;
-  font-style: normal;
-}
+    .token.title,
+    .token.title .token.punctuation {
+      font-weight: 700;
+      color: #1d3e81
+    }
 
-/* Title page and imprint page styles */
-.titlepage {
-  text-align: center;
-  margin-top: 45mm;
-  page-break-after: always;
-}
+    .token.list {
+      color: #ed6a43
+    }
 
-.titlepage h1 {
-  font-size: 34pt;
-  letter-spacing: 0.5pt;
-  margin: 0 0 10mm 0;
-}
+    .token.inserted {
+      background-color: #eaffea;
+      color: #55a532
+    }
 
-.titlepage .subtitle {
-  font-size: 13.5pt;
-  font-style: italic;
-  margin-bottom: 40mm;
-}
+    .token.deleted {
+      background-color: #ffecec;
+      color: #bd2c00
+    }
 
-.titlepage .authors {
-  font-size: 12.5pt;
-  letter-spacing: 0.2pt;
-}
+    .token.bold {
+      font-weight: 700
+    }
 
-.imprintpage {
-  page-break-after: always;
-  font-size: 10pt;
-  line-height: 1.35;
-}
+    .token.italic {
+      font-style: italic
+    }
 
-.imprintpage .center {
-  text-align: center;
-  margin-top: 60mm;
-}
-</style>
-<div class="titlepage">
-  <h1>FAREWELL TO WESTPHALIA</h1>
-  <div class="subtitle">Crypto Sovereignty and Post‑Nation‑State Governance</div>
-  <div class="authors">JARRAD HOPE&nbsp;&nbsp;&nbsp;&nbsp;PETER LUDLOW</div>
-</div>
-<div class="imprintpage">
-  <div class="center">
-    Farewell to Westphalia: Crypto Sovereignty and Post‑Nation‑State Governance<br>
-    Published by Logos Press Engine<br>
-    Logos Collective Association, Baarerstrasse 10, 6300 Zug, Switzerland
-    <br><br>
-    Copyright ©2025, Jarrad Hope and Peter Ludlow.
-    <br><br>
-    This book is published under the Creative Commons Attribution‑ShareAlike 4.0 International License.<br>
-    Copy it, remix it, translate it, distribute it – just give credit and share alike.
-    <br><br>
-    ISBN: 978‑3‑9526275‑0‑1, 978‑3‑9526275‑1‑8 (print)<br>
-    ISBN: 978‑3‑9526275‑2‑5, 978‑3‑9526275‑3‑2 (digital)
-    <br><br>
-    POLITICAL SCIENCE / Privacy &amp; Surveillance<br>
-    BUSINESS &amp; ECONOMICS / Bitcoin &amp; Cryptocurrencies<br>
-    PHILOSOPHY / Political
-    <br><br>
-    Logos Press Engine
-  </div>
-</div>
-# SBOHEM WESTFÁLSKO {#sbohem-westfálsko }
-## Kryptoměnová suverenita a správa věcí veřejných v postnárodním státě {#kryptoměnová-suverenita-a-správa-věcí-veřejných-v-postnárodním-státě }
-<hr>
-<h2 id="úvod">Úvod </h2>
-<p>Tato kniha se zabývá otázkou, jakým způsobem lidé spravují své společné záležitosti – tedy tím, čemu říkáme lidské vládnutí (<em>human governance</em>). Autoři vycházejí z přesvědčení, že tradiční politické struktury, zejména suverénní národní státy, představují technologii správy společnosti, která vznikla za zcela jiných historických podmínek a která dnes naráží na své limity.</p>
-<p>Od Vestfálského míru z roku 1648 se národní stát stal základním stavebním kamenem mezinárodního uspořádání. Tento model však vznikl jako reakce na specifické konflikty raného novověku – především náboženské války v Evropě – a nebyl nikdy navržen pro svět globálních sítí, digitálních technologií a transnacionálních problémů.</p>
-<p>Autoři tvrdí, že blockchainové technologie a s nimi spojené nástroje (chytré kontrakty, decentralizované databáze, DAO) představují nový druh infrastruktury, který umožňuje koordinaci lidské činnosti bez nutnosti centralizované autority. Klíčovou myšlenkou knihy je, že nejvýznamnější aplikací blockchainu nebude finance, ale právě správa lidských záležitostí.</p>
-<div class="vysvetlivka">
-  <div class="vysvetlivka-title">Vysvětlivka 1 — Blockchain</div>
-  Blockchain je sdílená databáze (záznamová kniha), kterou současně drží mnoho účastníků sítě. Nové záznamy se přidávají po „blocích“ a po uložení je velmi těžké je zpětně změnit, protože by se musela shodnout (nebo být oklamána) velká část sítě. Prakticky to znamená transparentní a obtížně falšovatelný záznam událostí bez jediné centrální autority.
-</div>
-<div class="vysvetlivka">
-  <div class="vysvetlivka-title">Vysvětlivka 2 — Chytré kontrakty (smart contracts)</div>
-  Chytrý kontrakt je program běžící na blockchainu, který automaticky provede předem daná pravidla („když nastane X, proveď Y“). Nejde o „kontrakt“ v právním smyslu slova, ale o kód, který umí vynutit dohodnuté podmínky (např. uvolnit platbu po splnění podmínky), aniž by musel zasahovat prostředník.
-</div>
-<div class="vysvetlivka">
-  <div class="vysvetlivka-title">Vysvětlivka 3 — Decentralizované databáze</div>
-  Decentralizovaná databáze nemá jeden centrální server, který vše kontroluje. Data jsou rozprostřena mezi více uzlů a systém je navržen tak, aby fungoval i při výpadku některých z nich. Cílem je vyšší odolnost a menší závislost na jednom „vlastníkovi“ infrastruktury.
-</div>
-<div class="vysvetlivka">
-  <div class="vysvetlivka-title">Vysvětlivka 4 — DAO (Decentralized Autonomous Organization)</div>
-  DAO je „organizace“ řízená souborem pravidel v chytrých kontraktech. Členové obvykle hlasují o návrzích a rozhodnutí se pak automaticky provádějí podle nastavených pravidel (např. správa společného rozpočtu). V praxi jde o pokus nahradit některé funkce klasických institucí transparentním a programovatelným procesem.
-</div>
-<hr>
-<h1 id="kapitola-1">Kapitola 1 </h1>
-<h2 id="úvod-1">Úvod </h2>
-<h3 id="směřování-k-decentralizované-avšak-kooperativní-správě">Směřování k decentralizované, avšak kooperativní správě </h3>
-<p>Roku 1648 ukončil Vestfálský mír třicetiletou válku, během níž se katolíci a protestanti střetávali napříč severní Evropou. Šlo o konflikt mimořádně ničivý – miliony lidí zahynuly nejen v boji, ale také v důsledku hladu a nemocí. Vestfálské smlouvy nejen ukončily válku, ale zároveň položily základy moderního systému suverénních národních států.</p>
-<p>Zásadní myšlenkou tohoto uspořádání bylo, že to, co se odehrává uvnitř hranic státu, je jeho vnitřní záležitostí. Tento princip skutečně přispěl k ukončení jednoho konkrétního konfliktu. Pokud se však podíváme na dějiny následujících staletí – napoleonské války, války 19. století, dvě světové války a četné genocidy – je namístě položit otázku, zda národní stát splnil své poslání.</p>
-<p>Národní státy jsou lidské technologie určené k řešení ideologických, politických a náboženských konfliktů. Stejně jako jiné technologie vzniklé v 17. století však nemusí představovat optimální řešení pro dnešní svět. Stejně jako jsme překonali mechanické počítací stroje či kyvadlové hodiny, je legitimní ptát se, zda bychom nemohli překonat i tehdejší politické technologie.</p>
-<p>Od publikace bitcoinového whitepaperu v roce 2008 se diskuse o blockchainu soustředila především na finance. Autoři této knihy však tvrdí, že skutečný potenciál blockchainu spočívá jinde: v umožnění decentralizované, avšak koordinované lidské spolupráce v oblasti správy věcí veřejných.</p>
-<div class="vysvetlivka">
-  <div class="vysvetlivka-title">Vysvětlivka 5 — „Bitcoinový whitepaper“</div>
-  Whitepaper je stručný technický dokument, který popisuje návrh systému a jeho principy. „Bitcoinový whitepaper“ (2008) je text, v němž autor pod pseudonymem Satoshi Nakamoto popsal, jak by mohla fungovat elektronická hotovost bez banky či centrální autority.
-</div>
-<p>Pod pojmem lidské vládnutí rozumějí systémy a procesy, jejichž prostřednictvím lidé přijímají rozhodnutí o svých komunitách a uvádějí tato rozhodnutí do praxe. Blockchain v tomto kontextu funguje jako nástroj, který umožňuje sdílené, neměnné a transparentní záznamy bez centrální autority.</p>
-<div class="vysvetlivka">
-  <div class="vysvetlivka-title">Vysvětlivka 6 — „Neměnné“ a „transparentní“ záznamy</div>
-  „Neměnné“ neznamená absolutně nezměnitelné za všech okolností, ale prakticky velmi těžko zpětně upravitelné bez toho, aby to bylo vidět nebo bez získání výrazné kontroly nad systémem. „Transparentní“ znamená, že pravidla a (často) i historie transakcí jsou ověřitelné; co přesně je veřejné, závisí na typu blockchainu.
-</div>
-<p>Centralizované systémy správy jsou náchylné ke korupci, tyranii a selhání v jednom bodě. Decentralizované systémy jsou naproti tomu odolnější, avšak tradičně považované za neefektivní. Autoři argumentují, že blockchainové technologie tuto domnělou výměnu mezi efektivitou a odolností překonávají.</p>
-<p>Transparentní archivy, bezpečná komunikace a vymahatelnost slibů prostřednictvím chytrých kontraktů představují základní stavební kameny nové formy správy. Stejně jako distribuované systémy v informatice dokáží fungovat i při selhání jednotlivých uzlů, může i lidská správa fungovat bez centrální autority, pokud je správně navržena.</p>
-<p>Vládnutí se neodehrává pouze na úrovni národních států, ale prostupuje celou společností – od mezinárodních organizací přes místní samosprávy až po soukromé instituce. Právě proto mají technologie, které ovlivňují způsob správy, zásadní dopad na lidskou prosperitu, svobodu a kulturní rozvoj.</p>
-<p>Autoři uzavírají, že hlavní dělicí linií dneška není spor mezi socialismem a kapitalismem, ale mezi centralizací a decentralizací. Cílem knihy je přispět k rozvoji technologií a hodnot, které umožní vznik decentralizovaných forem správy a spolupráce v postvestfálském světě.</p>
-<hr>
-<h3 id="kapitola-2">Kapitola 2 </h3>
-<h2 id="národní-státy-jsou-zastaralé-technologie-vládnutí">Národní státy jsou zastaralé technologie vládnutí </h2>
-<hr>
-<h3 id="21-úvodní-poznámky">2.1 Úvodní poznámky </h3>
-<p>V roce 1994, během rwandské genocidy, se Immaculée Ilibagiza, příslušnice kmene Tutsi, skrývala v tajném prostoru v domě svého pastora a naslouchala Hutuům ozbrojeným mačetami, jak po ní pátrají. Slyšela je, jak říkají, že je třeba vyhladit tutsijské „šváby“, a poté: „Je tady… víme, že tu někde je. Najděte ji – najděte Immaculée.“</p>
-<p>Immaculée slyšela jednoho z Hutuů, jak se chlubil, že už zabil 399 „švábů“, a že chce, aby mu pomohla dovršit počet na rovných 400. Ve své knize <em>Left to Tell</em> popsala tuto zkušenost následovně:</p>
-<blockquote>
-<p>Pokusila jsem se polknout, ale hrdlo se mi sevřelo. Neměla jsem žádné sliny a ústa jsem měla sušší než písek. Zavřela jsem oči a snažila se zmizet, ale jejich hlasy sílily. Věděla jsem, že nebudou mít žádné slitování, a v mysli mi zněla jediná myšlenka: Jestli mě chytí, zabijí mě. Jestli mě chytí, zabijí mě. Jestli mě chytí, zabijí mě.</p>
-</blockquote>
-<p>Když Immaculée po třech měsících konečně opustila své úkryty, dozvěděla se o rozsahu zkázy, která postihla její rodinu a její kmen. Její otec, matka a dva ze tří bratrů byli brutálně zavražděni. Nespočet sousedů zahynul také. Odhady počtu zabitých Tutsiů se pohybují mezi půl milionem a jedním milionem. Počet znásilněných tutsijských žen se odhaduje mezi 200 000 a 250 000. Psychologické škody, které tato genocida zanechala na přeživších, jsou nevyčíslitelné.</p>
-<p>V bezprostřední reakci na tuto zvěrskost bylo přirozené hovořit o zlu hutuských vrahů – a jistě, tito pachatelé nemohou a nesmí být zbaveni odpovědnosti. Zároveň je však nutné si všimnout, že k těmto událostem by možná vůbec nedošlo, kdyby dva odlišné kmeny s rozdílnými kulturami a dějinami nebyly násilně „nacpány“ do hranic jednoho národního státu, jehož hranice byly vytyčeny koloniálními evropskými mocnostmi.</p>
-<p>Jakmile k tomuto násilnému uzavření došlo, otázkou se stalo, který z obou kmenů bude vládnout tomu druhému. Když Rwandu ovládalo Německo, byla menšinová skupina Tutsiů dosazena k moci, což mělo důsledky, které zasely hlubokou zášť a které nakonec vyústily v hrůznou genocidu roku 1994. Jinými slovy, bez ohledu na to, jaké výhody mohl mít Vestfálský mír pro Evropu, pokus exportovat tuto politickou technologii do Afriky – při ignorování kmenových hranic a vytváření nových, umělých hranic národních států – měl katastrofální následky.</p>
-<p>Bohužel není rwandský příběh ojedinělý. I dnes je naše politická krajina plná příkladů etnických skupin, které jsou nuceny žít společně v rámci jednoho národního státu, kde jedna skupina vládne nad druhou a kde to příliš často vede k pokusům o genocidu. Moderní státy jsou i v době psaní této knihy dějištěm mnoha takových případů.</p>
-<hr>
-<h3 id="22-národní-státy-nejsou-jedinou-možností">2.2 Národní státy nejsou jedinou možností </h3>
-<p>Někdy se zdá, jako by národní státy existovaly odjakživa. Před Organizací spojených národů tu přece byla Společnost národů – a před ní musely existovat národy, ne? Přestože se dnes mohou národní státy jevit jako pevně dané a neměnné, historicky tomu tak nebylo.</p>
-<p>Ještě relativně nedávno lidé používali jiné systémy k politické a ekonomické organizaci. Existovala království a městské státy, říše a vévodství, federace městských států, chalífáty, palatináty, papežské státy, klany, kmeny a „národy“ lidí sdílejících společné dědictví, aniž by byli organizováni do států. Dokonce ještě před příchodem evropských mocností byl celý severoamerický kontinent převážně organizován na kmenovém základě, přičemž se občas objevovaly říše, které následně opět zanikly.</p>
-<p>Faktem je, že národní státy jsou relativně novým vynálezem. Jde o formu vlády, která má své kořeny v protestantsko-katolických válkách, jež po reformaci zachvátily severní Evropu, a která byla navržena k řešení velmi konkrétního problému: jak zabránit tomu, aby konflikty o náboženství a ideologii zaplavily celé kontinenty a pohltily vše, co jim stojí v cestě.</p>
-<p>Jak jsme uvedli v první kapitole, národní státy v podobě, v jaké je známe dnes, vznikly roku 1648 uzavřením Vestfálského míru – souborem smluv, které ukončily třicetiletou válku. Podle tradiční interpretace tento mír zajistil stabilitu tím, že ustanovil zásadu, podle níž se nemáme příliš vměšovat do toho, co se děje uvnitř hranic jednotlivých států. Národní hranice tak měly sloužit jako přepážky, které zabrání vlnám násilí v šíření napříč kontinenty.</p>
-<p>Ne všichni tuto interpretaci Vestfálského míru přijímají. Někteří kritici tvrdí, že tzv. „vestfálský mýtus“ byl vytvořen proto, aby se existence národních států jevila jako nevyhnutelná a aby byly jiné možnosti politické organizace předem diskvalifikovány. I v této knize vycházíme z předpokladu, že národní státy nejsou ani nevyhnutelné, ani nutné. Jsou to lidské výtvory – a možná ne příliš povedené – navzdory jejich zakotvení v mezinárodním právu.</p>
-<p>Je důležité mít na paměti dvě věci. Zaprvé, pokud měly národní státy zabránit válkám náboženství a ideologií v globálním měřítku, pak v tomto ohledu selhaly. Zadruhé, v mnoha případech situaci ještě zhoršují tím, že násilně uzavírají skupiny lidí s rozdílnými zájmy a identitami do umělých hranic, kde jedna skupina zpravidla dominuje druhé – což může vést k extrémním důsledkům, jaké jsme viděli v Rwandě.</p>
-<hr>
-<h3 id="23-jsou-národní-státy-špatné-ve-všem">2.3 Jsou národní státy špatné ve všem? </h3>
-<p>Naším tvrzením zde není pouze to, že národní státy selhaly při ochraně lidských práv nebo při prevenci genocid, náboženského útlaku a masového násilí – tedy v oblasti, pro niž byly původně vytvořeny. Tvrdíme, že se zdají být špatné prakticky ve všech oblastech správy lidských záležitostí.</p>
-<p>Zvažme například otázku národních měn. Pokud národní státy selhaly v ochraně lidských práv a v prevenci masových zvěrstev, jsou alespoň dobré v zavádění a správě měn, které lidé používají pro ekonomickou činnost? Historická zkušenost naznačuje, že nikoli. Měny pod kontrolou národních států se opakovaně ukázaly jako nespolehlivé a nestabilní. Dějiny jsou plné případů, kdy národní měny zcela zkolabovaly.</p>
-<p>Nejznámějším příkladem je kolaps německé měny ve Výmarské republice po první světové válce. Inflace tehdy dosáhla hodnot přesahujících 30 000 %, což znamenalo, že ceny se zdvojnásobovaly během několika dní. Lidé pálili bankovky, aby se zahřáli, protože jejich hodnota byla nižší než hodnota papíru, z něhož byly vyrobeny.</p>
-<p>Nešlo však o ojedinělý případ. Po druhé světové válce dosáhla inflace v Maďarsku podle ekonomických odhadů přibližně 41,9 kvadrilionu procent ročně, což znamenalo, že ceny se zdvojnásobovaly přibližně každých patnáct hodin. V roce 2008 muselo Zimbabwe tisknout bankovky s nominální hodnotou přesahující jeden bilion. Mezi další oběti hyperinflace patří řecká drachma, čínský jüan, chilské escudo, argentinské peso, peruánský sol, jugoslávský dinár, běloruský rubl či angolská kwanza.</p>
-<p>I když nedojde k hyperinflaci, zdánlivě mírná inflace ve výši dvou procent ročně dokáže v horizontu jednoho lidského života zcela znehodnotit rodinný majetek, pokud je držen výhradně v národní měně.</p>
-<p>Tyto skutečnosti neznamenají, že dřívější formy lidské organizace byly v otázce peněz úspěšnější. Již římský císař Dioklecián znehodnocoval měnu ředěním obsahu stříbra v denáru. Pointou však není tvrdit, že hyperinflace je výlučným problémem národních států, nýbrž že národní státy se ukázaly být mimořádně špatné v její prevenci.</p>
-<p>To vše vede k zásadní otázce: proč by měly být měny vůbec pod kontrolou národních států?</p>
-<hr>
-<h3 id="24-zpochybnění-suverenity">2.4 Zpochybnění suverenity </h3>
-<p>Tyto pochybnosti nejsou nové ani ojedinělé. Myšlenka suverénního národního státu se již delší dobu postupně rozpadá. Začněme samotným pojmem suverenity. V reakci na události, jako byla rwandská genocida, začali mnozí zpochybňovat moudrost absolutní státní suverenity. Rostoucí uznání univerzálních lidských práv podkopává představu, že vnitřní záležitosti státu jsou výhradně jeho vlastní věcí.</p>
-<p>Stále více se prosazuje názor, že porušování lidských práv by mělo být řešeno mezinárodním společenstvím, i když k němu dochází uvnitř hranic suverénního státu. Tento posun již není pouze teoretický – promítá se do mezinárodního práva i do vzniku institucí, které si nárokují právo zasahovat v případech válečných zločinů či genocidy.</p>
-<p>Kromě lidských práv existuje rostoucí množství dalších problémů, které narušují tradiční pojetí suverenity. Environmentální otázky, jako je znečištění ovzduší či vody, jsou svou povahou nadnárodní. Znečištěný vzduch ani kontaminované řeky nerespektují státní hranice. Pokud jsou toxické látky vypouštěny do vodních toků jednoho státu, rychle se dostávají do oceánů a ovlivňují celý planetární systém.</p>
-<p>Podobně i v ekonomické oblasti vedou regionální bloky a obchodní dohody k omezení schopnosti států vykonávat plnou suverenitu. Vstup do mezinárodních obchodních dohod nevyhnutelně znamená přijetí mechanismů řešení sporů, které omezují možnost jednostranného rozhodování.</p>
-<p>Dalším faktorem je proměna bezpečnostního prostředí. Vzestup nestátních aktérů, teroristických sítí a nadnárodních kriminálních organizací vedl mnohé k závěru, že žádný stát dnes není schopen zajistit svou bezpečnost izolovaně. I zde dochází k přenášení suverénních pravomocí na nové formy centralizované nebo nadnárodní moci.</p>
-<hr>
-<h3 id="25-hledání-alternativ">2.5 Hledání alternativ </h3>
-<p>Výše uvedené trendy ukazují, že národní státy a tradiční mezinárodní organizace již nejsou jedinými aktéry globální správy. Na světové scéně došlo k jakési „kambrické explozi“ nových forem vládnutí, z nichž mnohé fungují napříč státními hranicemi a bez ohledu na ně.</p>
-<p>Moc a autorita se v současném světě stále častěji přesouvají k aktérům, kteří nejsou národními státy. Mezinárodní kartely, nadnárodní korporace, teroristické organizace i digitální sítě dokáží v některých regionech vykonávat větší faktickou kontrolu než formální státní instituce.</p>
-<p>Tyto struktury často přebírají role, které byly tradičně spojovány se státem: vybírají daně, zajišťují bezpečnost, poskytují sociální služby nebo regulují ekonomickou činnost. Bez ohledu na to, zda tyto aktivity hodnotíme pozitivně či negativně, nelze přehlédnout, že zásadně narušují vestfálský model světa založený výhradně na suverénních národních státech.</p>
-<p>Otázka proto nezní, zda se svět odklání od vestfálského řádu, ale jaké alternativy jej nahradí. Hledáme formy správy, které minimalizují nedůvěru, umožňují skutečné sebeurčení komunit a zároveň poskytují bezpečný mechanismus „odchodu“ v situacích, kdy společné uspořádání selhává.</p>
-<p>V následujících kapitolách se autoři obracejí k technologickým inovacím – zejména k blockchainovým technologiím – jako k jednomu z možných základů těchto nových forem postnárodní správy.</p>
-<hr>
-<h2 id="poznámky-k-pojmům">Poznámky k pojmům </h2>
-<p><strong>Národní stát (Nation state)</strong><br>
-Politická jednotka, která spojuje státní suverenitu s představou jednotného národa sdílejícího jazyk, kulturu nebo identitu. Autoři tento koncept chápou jako historickou technologii správy společnosti, nikoli jako přirozený či nevyhnutelný stav.</p>
-<p><strong>Vestfálský řád (Westphalian order)</strong><br>
-Systém mezinárodních vztahů založený na principech státní suverenity a nevměšování se do vnitřních záležitostí států, formálně ustavený Vestfálským mírem roku 1648.</p>
-<p><strong>Kettling (doslova „nahnání do kotle“)</strong><br>
-Metafora používaná autory pro nucené uzavření odlišných etnických, kulturních či náboženských skupin do společného politického prostoru bez možnosti sebeurčení nebo bezpečného odchodu.</p>
-<hr>
-<h1 id="kapitola-3">Kapitola 3 </h1>
-<h2 id="poststátní-vládnutí">Poststátní vládnutí </h2>
-<hr>
-<h3 id="31-úvodní-poznámky">3.1 Úvodní poznámky </h3>
-<p>V roce 1695 zřídili Britové opěrný bod na karibském ostrově New Providence na Bahamách. Původně se jmenoval Charles Town, později byl přejmenován na Nassau – a tak se jmenuje dodnes. Když v roce 1701 vypukla válka o španělské dědictví, rozhořely se konflikty napříč Evropou a brzy se přelily i do Karibiku. Po francouzsko‑španělských nájezdech Britové roku 1706 opěrný bod opustili. Následně se ho zmocnili karibští piráti a vytvořili zde základnu, která fungovala až do roku 1718, kdy Britové město znovu dobyli.</p>
-<p>Během této doby vznikla struktura známá jako Republika pirátů. Nešlo o stát v tradičním smyslu, ale o decentralizovaný systém správy založený na dohodách, hlasování a kodexech. Piráti měli vlastní pravidla rozdělování kořisti, volili kapitány a uplatňovali relativně rovnostářské mechanismy rozhodování. Mezi známé členy této komunity patřili Edward „Černovous“ Teach, Charles Vane, „Calico Jack“ Rackham, Stede Bonnet či „Black Sam“ Bellamy.</p>
-<p>Tyto pirátské kodexy představují raný příklad samosprávy mimo rámec národních států. Hakim Bey je ve své knize <em>T.A.Z.: The Temporary Autonomous Zone</em> popsal jako příklady dočasných autonomních zón – struktur, které vznikají v mezerách moci, fungují po určitou dobu a poté zanikají.</p>
-<p>Dnes však sledujeme situaci, kdy státy z různých důvodů – technologických, ekonomických i geopolitických – postupně opouštějí části své tradiční suverenity. Otázka tedy nezní, zda bude vládnutí existovat i mimo stát, ale jak bude vypadat v době, kdy stát ztrácí monopol na výkon moci.</p>
-<hr>
-<h3 id="32-některé-příklady-z-kambrické-exploze">3.2 Některé příklady z kambrické exploze </h3>
-<p>Jak se vestfálský model rozpadá, nevzniká jedna náhrada, ale celé spektrum nových forem správy. Autoři tento proces přirovnávají ke kambrické explozi: rychlému a nekoordinovanému vzniku různorodých struktur, které přebírají části tradičních státních funkcí.</p>
-<p>Mezi tyto formy patří menší územní jednotky – města, regiony, zvláštní správní oblasti či daňové okrsky – které získávají pravomoci v oblasti infrastruktury, regulace nebo výběru poplatků. V USA jsou typickým příkladem tzv. <em>special taxing districts</em>, které mohou poskytovat veřejné služby nezávisle na klasické obecní správě.</p>
-<p>Existují však i struktury nadnárodní. Evropská unie postupně vytvořila vlastní právní řád a rozhodovací mechanismy, které v mnoha oblastech omezují suverenitu členských států. Suverenita se tak stává rozvrstvenou a sdílenou.</p>
-<p>Další oblastí je bezpečnost. V některých městech přebírají část policejních funkcí soukromé subjekty, často se souhlasem místních samospráv. Podobně fungují i rezidenční sdružení typu HOA (Homeowners Association), která regulují chování, majetek a poplatky svých členů.</p>
-<p>Tyto příklady ukazují, že poststátní svět není světem bez vládnutí, ale světem s mnoha překrývajícími se vrstvami správy.</p>
-<hr>
-<h3 id="33-sharding-nestačí">3.3 Sharding nestačí </h3>
-<p>Na první pohled by se mohlo zdát, že řešením je prosté dělení velkých států na menší jednotky. Menší jednotky však nejsou automaticky demokratičtější. Pokud zůstanou centralizované, zůstávají snadno ovladatelné a zranitelné vůči korupci či nátlaku.</p>
-<p>Autoři upozorňují, že mnohé menší správní celky jsou manipulovány shora – ze strany států či jiných mocenských struktur. Sharding vládnutí je tedy tolerován pouze tehdy, pokud jednotlivé části zůstávají kontrolovatelné.</p>
-<p>Proto je podle autorů nutné jít dál než k pouhému dělení moci. Skutečně poststátní správa musí být decentralizovaná nejen formálně, ale i technicky. Právě zde vstupují do hry blockchainové technologie, které umožňují transparentní, auditovatelnou a distribuovanou koordinaci bez centrální autority.</p>
-<hr>
-<h2 id="poznámky-k-pojmům-1">Poznámky k pojmům </h2>
-<p><strong>Post‑state governance (poststátní vládnutí)</strong><br>
-Formy správy a koordinace, které nevycházejí z monopolní suverenity národního státu, ale z komunitních, smluvních či technologických struktur.</p>
-<p><strong>TAZ – Temporary Autonomous Zone</strong><br>
-Pojem Hakima Beye označující dočasné autonomní struktury vznikající v mezerách moci.</p>
-<p><strong>Sharding</strong><br>
-Rozdělení systému na menší části; autoři upozorňují, že bez skutečné decentralizace zůstává i rozdělený systém centralizovaný.</p>
+    .language-json .token.property {
+      color: #183691
+    }
 
-<h1 id="kapitola-4">Kapitola 4 </h1>
-<h2 id="nové-konceptuální-základy">Nové konceptuální základy </h2>
-<hr>
-<h3 id="41-úvodní-poznámky">4.1 Úvodní poznámky </h3>
-<p>V předchozích dvou kapitolách jsme probírali řadu nových (i starších) forem poststátní správy, které se objevily v posledních desetiletích. Mnohé z nich však nejsou dobrými „řešeními“ selhávání vestfálského vládnutí – spíše jsou jeho symptomy. Je samozřejmé, že si nemyslíme, že drogové kartely, polovojenské organizace či teroristické sítě představují pozitivní vývoj lidského vládnutí.</p>
-<p>To vše vede k otázce, co vlastně hledat. Jaké jsou pozitivní možnosti? K čemu bychom měli směřovat?</p>
-<p>Chceme-li určit, co by mělo být naším cílem, je užitečné začít tím, jaké chyby nechceme opakovat. O těchto selháních jsme už mluvili poměrně podrobně. Nechceme systém, v němž jsou lidé s různými hodnotami „nahnáni do kotle“ uvnitř určitého území a nuceni řídit se sadou hodnot, které nesdílejí. Lidé by neměli být vězni své geografie ani vězni tyrana, který ovládá dění uvnitř libovolně nakreslených hranic. Lidé by měli mít možnost odejít z nepřátelských vládních systémů. A také by měli být schopni žít mimo zkorumpované systémy, v nichž centralizované autority zneužívají své mocenské postavení k osobnímu prospěchu.</p>
-<p>Pokud má být blockchain relevantní pro lidské vládnutí, pak proto, že slibuje infrastrukturu, která snižuje prostor pro centralizované zneužití moci: umožňuje sdílené, ověřitelné a (prakticky) těžko zpětně manipulovatelné záznamy, programovatelná pravidla a nové formy koordinace. Než však přejdeme k návrhům, je třeba si vyjasnit konceptuální základ: jaké hodnoty, cíle a principy má postvestfálské vládnutí sledovat.</p>
-<p>V této kapitole se proto podíváme na dva historicky významné „internetové“ proudy, které tyto hodnoty pomáhaly formovat. Jedním z nich jsou cypherpunks a jejich důraz na soukromí jednotlivce. Druhým jsou hacktivisté a jejich důraz na transparentnost institucí, které drží moc.</p>
-<hr>
-<h3 id="42-cypherpunks-a-soukromí">4.2 Cypherpunks a soukromí </h3>
-<p>Na úsvitu raného internetu se objevila skupina aktivistů známá jako cypherpunks. Jejich hlavní obavou bylo, že se internet může velmi snadno stát nástrojem univerzálního dohledu a útlaku – a proto vyvíjeli nástroje, které umožní zachovat soukromí i v online prostoru.</p>
-<p>Jedním z takových nástrojů, které z cypherpunkového prostředí vzešly, bylo Pretty Good Privacy (PGP): šifrovací protokol „vojenské úrovně“, který vyvinul Phillip Zimmermann a který umožnil lidem komunikovat bez strachu ze sledování – ať už ze strany diktátorů, tyranů, nebo jiných škodlivých aktérů. Cypherpunks však nepřinesli jen nástroje; artikulovali také filozofii, která v dalších letech pomáhala určovat směr internetu. A to bylo důležité: i když internet zdaleka není dokonalým ochráncem soukromí, věci mohly být mnohem horší.</p>
-<p>Jedním z klíčových textů hnutí byl „Cypherpunk Manifesto“, který napsal Eric Hughes v roce 1993. Hughesova základní teze zněla, že aby mohla fungovat otevřená společnost, musí některé věci zůstat soukromé – například rozhovory či výměny mezi jednotlivci. „Soukromí je nezbytné pro otevřenou společnost v elektronickém věku,“ píše Hughes.</p>
-<p>Podle Hughese otevřená společnost vyžaduje, aby lidé mohli jednat a komunikovat s kým chtějí, aniž by celý svět znal obsah výměny – nebo dokonce to, mezi kým proběhla. Proč je to kritické? Protože se můžeme bát následků komunikace s nepopulární osobou, nebo se můžeme bát veřejně sdílet nové myšlenky, které se vymykají běžně přijímaným názorům, a které by mohly vyvolat odpor a diskriminaci. Není náhoda, že Leonardo da Vinci psal část svých rukopisů v kódu (zrcadlovým písmem a vlastní zkratkou). Podobně Charles Darwin po celé desetiletí pečlivě střežil rukopis <em>O původu druhů</em> – v daném okamžiku to bylo příliš provokativní.</p>
-<p>Hughes to shrnuje větou: „Soukromí je moc selektivně (zdůraznění v originále) odhalovat sám sebe světu.“ Tyto historické příklady pro něj nebyly jen kuriozitou – ukazují, že prostor pro myšlenky a pro dialog často potřebuje ochrannou vrstvu soukromí.</p>
-<p>V manifestu Hughes upozorňuje, že lidé bránili své soukromí po staletí šeptáním, tmou, obálkami, zavřenými dveřmi, tajnými znameními a kurýry. Minulé technologie však silné soukromí neumožňovaly – elektronické technologie ano.</p>
-<p>To cypherpunks vedlo k praktickému závěru a k praktické akci. Jejich role měla být jednoduchá: „Cypherpunks píší kód.“ Věděli, že někdo musí napsat software, který bude soukromí bránit – a protože bez toho soukromí mít nebudeme, rozhodli se ho napsat.</p>
-<p>Cypherpunks nepsali jen kód; vytvořili také jednu z nejranějších online komunit – a dokonce jednu z nejranějších distribuovaných online komunit. Roku 1992 založili mailing list, na němž diskutovali témata spojená zejména s kryptografií a s jejími politickými důsledky. Roku 1997 jej pak převedli do distribuované podoby, aby se vyhnuli závislosti na jednom bodě selhání.</p>
-<p>Mailing list cypherpunků byl „kdo je kdo“ raného internetu a pozdějšího web3. Vedle klíčových cypherpunků (Eric Hughes, Tim May, John Gilmore) na něm figurovali i Julian Assange (WikiLeaks), více zakladatelů Electronic Frontier Foundation, Richard Stallman (Free Software Foundation), Nick Szabo (autor konceptu chytrých kontraktů), Satoshi Nakamoto (Bitcoin) a Hal Finney.</p>
-<p>Soukromí však není jedinou částí rovnice. Aby mohla existovat svobodná společnost, potřebuje nejen soukromí jednotlivců, ale také určitou míru transparentnosti a kontroly nad institucemi, které drží moc. To nás vede k hacktivistům.</p>
-<div class="vysvetlivka">
-  <div class="vysvetlivka-title">Vysvětlivka — PGP (Pretty Good Privacy)</div>
-  PGP je systém pro šifrování a podepisování zpráv (typicky e-mailů a souborů). Šifrování chrání obsah před čtením třetí stranou; digitální podpis umožňuje ověřit, kdo zprávu poslal a že nebyla po cestě změněna.
-</div>
-<div class="vysvetlivka">
-  <div class="vysvetlivka-title">Vysvětlivka — Cypherpunks</div>
-  Cypherpunks je hnutí (a komunita) kombinující kryptografii a politický aktivismus. Jeho základní intuice zní: chcete-li chránit svobodu v digitálním věku, musíte mít k dispozici praktické technické nástroje (zejména šifrování), nikoli jen deklarace a zákony.
-</div>
-<hr>
-<h3 id="43-hacktivisté-a-transparentnost">4.3 Hacktivisté a transparentnost </h3>
-<p>Zatímco cypherpunks se soustředili na soukromí jednotlivců, jiné skupiny se soustředily na transparentnost vlád a dalších institucí, které nad námi mají moc (například soukromých zpravodajských agentur). Tyto skupiny kritizovaly skryté vládní aktivity a – co je důležitější – vyvíjely nástroje, které dokáží „posvítit“ na metody, jimiž tradiční centralizované moci utlačují druhé. Stejně důležité bylo, že vyvíjely nástroje, které narušují iluzi neporazitelnosti těchto mocí. A ukázaly, že politické jednání může být stejně reálné a „hmatatelné“ i tehdy, když je zprostředkované digitální komunikací.</p>
-<p>Než budeme pokračovat, je užitečné vyjasnit, co tím autoři myslí slovem „hacktivista“. „Hacktivista“ je složenina slov „hacker“ a (politický) „aktivista“. To však vyvolává otázku, co je to „hacker“ – a hlavně, co to není. Hacker nemusí být nutně člověk, který se věnuje výhradně nelegálním počítačovým aktivitám. V původnějším smyslu jde spíše o někoho, kdo umí kreativně pracovat se systémy, hledat jejich slabiny, obcházet omezení a používat technologie způsoby, které nebyly zamýšlené.</p>
-<p>V tomto světle je hacktivismus politickým využitím „hackerství“: jde o to, jak technické dovednosti aplikovat na veřejné záležitosti – například na odhalování tajných praktik, na boj proti cenzuře, nebo na narušování nástrojů útlaku.</p>
-<p>Hacktivistické projekty (ať už jde o odhalovací platformy, nástroje pro anonymitu, nebo kampaně proti cenzuře) často míří na asymetrii informací: centralizované moci těží z toho, že vědí mnoho o občanech, zatímco občané vědí málo o tom, co dělají mocní. Transparentnost v tomto kontextu není jen „morální požadavek“, ale praktický mechanismus, který ztěžuje zneužití moci.</p>
-<p>Autoři zdůrazňují, že soukromí a transparentnost nejsou protiklady, ale dvě strany téže věci. Soukromí chrání jednotlivce před šikanou, perzekucí a „chilling effect“ (tedy před tím, že se lidé raději přestanou vyjadřovat, protože se bojí následků). Transparentnost naopak omezuje svévoli mocných tím, že umožňuje kontrolu a veřejné vyhodnocování.</p>
-<hr>
-<h3 id="44-digitálně-zprostředkované-bezhraniční-vládnutí">4.4 Digitálně zprostředkované, bezhraniční vládnutí </h3>
-<p>Posledním prvkem, který autoři v této kapitole zdůrazňují, je fakt, že digitální komunikace umožňuje lidem nejen organizovat se online, ale také organizovat se napříč hranicemi. V vestfálském modelu je vládnutí pevně svázáno s územím. Digitální sítě však umožňují vznik komunit, které jsou definovány vztahy a spoluprací, nikoli geografií.</p>
-<p>To má důsledky jak pro soukromí, tak pro transparentnost – ale i pro samotný koncept politické příslušnosti. Pokud se lidé mohou koordinovat, přijímat pravidla a vynucovat je prostřednictvím digitální infrastruktury, otevírá se prostor pro „bezhraniční“ formy vládnutí: pro systémy, které nejsou vázány na jednu jurisdikci, a které mohou konkurovat tradičním státům nebo je obcházet.</p>
-<p>Autoři zde upozorňují, že i když může být lákavé mluvit o „síťových státech“ (network states) či o digitálních státech, samotný pojem „stát“ s sebou nese historickou zátěž. Ať už jde o národní stát nebo o síťový stát, stále je to „stát“ – a tedy i struktura, která typicky zahrnuje monopolní nárok na pravidla, hranice a vynucení.</p>
-<p>Jejich přístup je jiný: místo toho, aby jako výchozí model brali stát, navrhují brát jako výchozí model alternativní formy organizace. Základním stavebním kamenem postvestfálského uspořádání nemusejí být „státy“, ale spíše komunity: dobrovolná sdružení lidí, která se organizují kolem sdílených pravidel a hodnot – a která umožňují reálnou možnost odchodu.</p>
-<p>Tento rámec připravuje půdu pro následující kapitoly: pokud chceme navrhnout robustní poststátní vládnutí, potřebujeme jasné cíle (současně chránit soukromí a prosazovat transparentnost), potřebujeme technické nástroje (kryptografii, chytré kontrakty, auditovatelné záznamy) a potřebujeme organizační principy (dobrovolnost, možnost odchodu, konkurence pravidel).</p>
-<div class="vysvetlivka">
-  <div class="vysvetlivka-title">Vysvětlivka — „Chilling effect“</div>
-  „Chilling effect“ označuje situaci, kdy lidé omezují své projevy a chování nikoli proto, že by jim to někdo přímo zakázal, ale proto, že se bojí možných následků (například sledování, postihu, ztráty práce nebo společenské ostrakizace).
-</div>
+    .language-markup .token.tag .token.punctuation {
+      color: #333
+    }
 
+    .language-css .token.function,
+    code.language-css {
+      color: #0086b3
+    }
+
+    .language-yaml .token.atrule {
+      color: #63a35c
+    }
+
+    code.language-yaml {
+      color: #183691
+    }
+
+    .language-ruby .token.function {
+      color: #333
+    }
+
+    .language-markdown .token.url {
+      color: #795da3
+    }
+
+    .language-makefile .token.symbol {
+      color: #795da3
+    }
+
+    .language-makefile .token.variable {
+      color: #183691
+    }
+
+    .language-makefile .token.builtin {
+      color: #0086b3
+    }
+
+    .language-bash .token.keyword {
+      color: #0086b3
+    }
+
+    pre[data-line] {
+      position: relative;
+      padding: 1em 0 1em 3em
+    }
+
+    pre[data-line] .line-highlight-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      display: block;
+      width: 100%
+    }
+
+    pre[data-line] .line-highlight {
+      position: absolute;
+      left: 0;
+      right: 0;
+      padding: inherit 0;
+      margin-top: 1em;
+      background: hsla(24, 20%, 50%, .08);
+      background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
+      pointer-events: none;
+      line-height: inherit;
+      white-space: pre
+    }
+
+    pre[data-line] .line-highlight:before,
+    pre[data-line] .line-highlight[data-end]:after {
+      content: attr(data-start);
+      position: absolute;
+      top: .4em;
+      left: .6em;
+      min-width: 1em;
+      padding: 0 .5em;
+      background-color: hsla(24, 20%, 50%, .4);
+      color: #f4f1ef;
+      font: bold 65%/1.5 sans-serif;
+      text-align: center;
+      vertical-align: .3em;
+      border-radius: 999px;
+      text-shadow: none;
+      box-shadow: 0 1px #fff
+    }
+
+    pre[data-line] .line-highlight[data-end]:after {
+      content: attr(data-end);
+      top: auto;
+      bottom: .4em
+    }
+
+    html body {
+      font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      overflow: initial;
+      box-sizing: border-box;
+      word-wrap: break-word
+    }
+
+    html body>:first-child {
+      margin-top: 0
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5,
+    html body h6 {
+      line-height: 1.2;
+      margin-top: 1em;
+      margin-bottom: 16px;
+      color: #000
+    }
+
+    html body h1 {
+      font-size: 2.25em;
+      font-weight: 300;
+      padding-bottom: .3em
+    }
+
+    html body h2 {
+      font-size: 1.75em;
+      font-weight: 400;
+      padding-bottom: .3em
+    }
+
+    html body h3 {
+      font-size: 1.5em;
+      font-weight: 500
+    }
+
+    html body h4 {
+      font-size: 1.25em;
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1.1em;
+      font-weight: 600
+    }
+
+    html body h6 {
+      font-size: 1em;
+      font-weight: 600
+    }
+
+    html body h1,
+    html body h2,
+    html body h3,
+    html body h4,
+    html body h5 {
+      font-weight: 600
+    }
+
+    html body h5 {
+      font-size: 1em
+    }
+
+    html body h6 {
+      color: #5c5c5c
+    }
+
+    html body strong {
+      color: #000
+    }
+
+    html body del {
+      color: #5c5c5c
+    }
+
+    html body a:not([href]) {
+      color: inherit;
+      text-decoration: none
+    }
+
+    html body a {
+      color: #08c;
+      text-decoration: none
+    }
+
+    html body a:hover {
+      color: #00a3f5;
+      text-decoration: none
+    }
+
+    html body img {
+      max-width: 100%
+    }
+
+    html body>p {
+      margin-top: 0;
+      margin-bottom: 16px;
+      word-wrap: break-word
+    }
+
+    html body>ol,
+    html body>ul {
+      margin-bottom: 16px
+    }
+
+    html body ol,
+    html body ul {
+      padding-left: 2em
+    }
+
+    html body ol.no-list,
+    html body ul.no-list {
+      padding: 0;
+      list-style-type: none
+    }
+
+    html body ol ol,
+    html body ol ul,
+    html body ul ol,
+    html body ul ul {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body li {
+      margin-bottom: 0
+    }
+
+    html body li.task-list-item {
+      list-style: none
+    }
+
+    html body li>p {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    html body .task-list-item-checkbox {
+      margin: 0 .2em .25em -1.8em;
+      vertical-align: middle
+    }
+
+    html body .task-list-item-checkbox:hover {
+      cursor: pointer
+    }
+
+    html body blockquote {
+      margin: 16px 0;
+      font-size: inherit;
+      padding: 0 15px;
+      color: #5c5c5c;
+      background-color: #f0f0f0;
+      border-left: 4px solid #d6d6d6
+    }
+
+    html body blockquote>:first-child {
+      margin-top: 0
+    }
+
+    html body blockquote>:last-child {
+      margin-bottom: 0
+    }
+
+    html body hr {
+      height: 4px;
+      margin: 32px 0;
+      background-color: #d6d6d6;
+      border: 0 none
+    }
+
+    html body table {
+      margin: 10px 0 15px 0;
+      border-collapse: collapse;
+      border-spacing: 0;
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all
+    }
+
+    html body table th {
+      font-weight: 700;
+      color: #000
+    }
+
+    html body table td,
+    html body table th {
+      border: 1px solid #d6d6d6;
+      padding: 6px 13px
+    }
+
+    html body dl {
+      padding: 0
+    }
+
+    html body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 700
+    }
+
+    html body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px
+    }
+
+    html body code {
+      font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+      font-size: .85em;
+      color: #000;
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      padding: .2em 0
+    }
+
+    html body code::after,
+    html body code::before {
+      letter-spacing: -.2em;
+      content: '\00a0'
+    }
+
+    html body pre>code {
+      padding: 0;
+      margin: 0;
+      word-break: normal;
+      white-space: pre;
+      background: 0 0;
+      border: 0
+    }
+
+    html body .highlight {
+      margin-bottom: 16px
+    }
+
+    html body .highlight pre,
+    html body pre {
+      padding: 1em;
+      overflow: auto;
+      line-height: 1.45;
+      border: #d6d6d6;
+      border-radius: 3px
+    }
+
+    html body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal
+    }
+
+    html body pre code,
+    html body pre tt {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0
+    }
+
+    html body pre code:after,
+    html body pre code:before,
+    html body pre tt:after,
+    html body pre tt:before {
+      content: normal
+    }
+
+    html body blockquote,
+    html body dl,
+    html body ol,
+    html body p,
+    html body pre,
+    html body ul {
+      margin-top: 0;
+      margin-bottom: 16px
+    }
+
+    html body kbd {
+      color: #000;
+      border: 1px solid #d6d6d6;
+      border-bottom: 2px solid #c7c7c7;
+      padding: 2px 4px;
+      background-color: #f0f0f0;
+      border-radius: 3px
+    }
+
+    @media print {
+      html body {
+        background-color: #fff
+      }
+
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5,
+      html body h6 {
+        color: #000;
+        page-break-after: avoid
+      }
+
+      html body blockquote {
+        color: #5c5c5c
+      }
+
+      html body pre {
+        page-break-inside: avoid
+      }
+
+      html body table {
+        display: table
+      }
+
+      html body img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%
+      }
+
+      html body code,
+      html body pre {
+        word-wrap: break-word;
+        white-space: pre
+      }
+    }
+
+    .markdown-preview {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box
+    }
+
+    .markdown-preview ul {
+      list-style: disc
+    }
+
+    .markdown-preview ul ul {
+      list-style: circle
+    }
+
+    .markdown-preview ul ul ul {
+      list-style: square
+    }
+
+    .markdown-preview ol {
+      list-style: decimal
+    }
+
+    .markdown-preview ol ol,
+    .markdown-preview ul ol {
+      list-style-type: lower-roman
+    }
+
+    .markdown-preview ol ol ol,
+    .markdown-preview ol ul ol,
+    .markdown-preview ul ol ol,
+    .markdown-preview ul ul ol {
+      list-style-type: lower-alpha
+    }
+
+    .markdown-preview .newpage,
+    .markdown-preview .pagebreak {
+      page-break-before: always
+    }
+
+    .markdown-preview pre.line-numbers {
+      position: relative;
+      padding-left: 3.8em;
+      counter-reset: linenumber
+    }
+
+    .markdown-preview pre.line-numbers>code {
+      position: relative
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows {
+      position: absolute;
+      pointer-events: none;
+      top: 1em;
+      font-size: 100%;
+      left: 0;
+      width: 3em;
+      letter-spacing: -1px;
+      border-right: 1px solid #999;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span {
+      pointer-events: none;
+      display: block;
+      counter-increment: linenumber
+    }
+
+    .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
+      content: counter(linenumber);
+      color: #999;
+      display: block;
+      padding-right: .8em;
+      text-align: right
+    }
+
+    .markdown-preview .mathjax-exps .MathJax_Display {
+      text-align: center !important
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group {
+      display: none
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .status {
+      display: none
+    }
+
+    .markdown-preview:not([data-for=preview]) .code-chunk .output-div {
+      margin-bottom: 16px
+    }
+
+    .markdown-preview .md-toc {
+      padding: 0
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
+      display: inline;
+      padding: .25rem 0
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,
+    .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p {
+      display: inline
+    }
+
+    .markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+      font-weight: 800
+    }
+
+    .scrollbar-style::-webkit-scrollbar {
+      width: 8px
+    }
+
+    .scrollbar-style::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    .scrollbar-style::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, .66);
+      border: 4px solid rgba(150, 150, 150, .66);
+      background-clip: content-box
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      overflow: auto
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+      position: relative;
+      top: 0;
+      min-height: 100vh
+    }
+
+    @media screen and (min-width:914px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em calc(50% - 457px + 2em)
+      }
+    }
+
+    @media screen and (max-width:914px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+        font-size: 14px !important;
+        padding: 1em
+      }
+    }
+
+    @media print {
+      html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+        display: none
+      }
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+      position: fixed;
+      bottom: 8px;
+      left: 8px;
+      font-size: 28px;
+      cursor: pointer;
+      color: inherit;
+      z-index: 99;
+      width: 32px;
+      text-align: center;
+      opacity: .4
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
+      opacity: 1
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 100%;
+      padding: 32px 0 48px 0;
+      font-size: 14px;
+      box-shadow: 0 0 4px rgba(150, 150, 150, .33);
+      box-sizing: border-box;
+      overflow: auto;
+      background-color: inherit
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
+      width: 8px
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: transparent
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      background-color: rgba(150, 150, 150, .66);
+      border: 4px solid rgba(150, 150, 150, .66);
+      background-clip: content-box
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
+      text-decoration: none
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc {
+      padding: 0 16px
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link {
+      display: inline;
+      padding: .25rem 0
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p {
+      display: inline
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+      font-weight: 800
+    }
+
+    html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+      left: 300px;
+      width: calc(100% - 300px);
+      padding: 2em calc(50% - 457px - 300px / 2);
+      margin: 0;
+      box-sizing: border-box
+    }
+
+    @media screen and (max-width:1274px) {
+      html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        padding: 2em
+      }
+    }
+
+    @media screen and (max-width:450px) {
+      html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+        width: 100%
+      }
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+      left: 50%;
+      transform: translateX(-50%)
+    }
+
+    html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
+      display: none
+    }
+  </style>
+</head>
+
+<body for="html-export">
+
+
+  <div class="crossnote markdown-preview  ">
+
+    <style>
+      :root {
+        /* Theme variables (default = dark) */
+        --bg: #0b0b0b;
+        --fg: #f2f2f2;
+        --muted: #c0c0c0;
+        --rule: #444444;
+        --box-bg: #151515;
+        --box-border: #3a3a3a;
+        --quote-border: #5a5a5a;
+        --link: #8ab4ff;
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 24mm 26mm 28mm 26mm;
+        }
+      }
+
+      /* Force override of MPE defaults */
+      html body,
+      html body[for="html-export"],
+      .markdown-preview {
+        background: var(--bg) !important;
+        color: var(--fg) !important;
+        font-size: clamp(16px, 2.2vw, 18px) !important;
+        line-height: 1.6 !important;
+      }
+
+      html body h1,
+      html body h2,
+      html body h3,
+      html body h4,
+      html body h5,
+      html body h6 {
+        color: var(--fg) !important;
+      }
+
+      html,
+      body {
+        font-family: "Times New Roman", Times, serif;
+        line-height: 1.48;
+        hyphens: auto;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+      }
+
+      @media (max-width: 480px) {
+
+        /* iPhone: override Markdown Preview Enhanced export rule (14px) */
+        html body[for="html-export"] .markdown-preview {
+          font-size: 18px !important;
+          line-height: 1.7 !important;
+        }
+
+        h1 {
+          margin-bottom: 6mm;
+        }
+
+        h2,
+        h3,
+        h4 {
+          margin-top: 5mm;
+        }
+
+        p {
+          margin-bottom: 4mm;
+        }
+
+        .vysvetlivka {
+          padding: 4mm 4mm;
+        }
+      }
+
+      @media print {
+
+        html,
+        body {
+          font-size: 11pt !important;
+          line-height: 1.48 !important;
+        }
+      }
+
+      h1 {
+        page-break-before: always;
+        margin-top: 0;
+        margin-bottom: 10mm;
+      }
+
+      h2,
+      h3,
+      h4 {
+        page-break-after: avoid;
+        margin-top: 7mm;
+        margin-bottom: 3mm;
+      }
+
+      p {
+        margin: 0 0 3.2mm 0;
+      }
+
+      a,
+      a:visited {
+        color: var(--link) !important;
+      }
+
+      blockquote {
+        margin: 4mm 0 4mm 8mm;
+        padding-left: 6mm;
+        border-left: 1px solid var(--quote-border);
+        font-style: italic;
+        background: transparent !important;
+      }
+
+      hr {
+        margin: 8mm 0;
+        border-color: var(--rule) !important;
+        background-color: var(--rule) !important;
+      }
+
+      code,
+      pre {
+        font-family: "Menlo", "SFMono-Regular", ui-monospace, monospace;
+        font-size: 9.8pt;
+      }
+
+      pre {
+        white-space: pre-wrap;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        border: 1px solid var(--rule);
+        padding: 2.5mm 3mm;
+      }
+
+      .vysvetlivka {
+        margin: 3mm 0 5mm 0;
+        padding: 3mm 4mm;
+        border: 1px solid var(--box-border);
+        background: var(--box-bg) !important;
+        page-break-inside: avoid;
+        font-style: italic;
+      }
+
+      .vysvetlivka-title {
+        font-weight: bold;
+        margin-bottom: 2mm;
+        font-style: normal;
+      }
+
+      /* Title page and imprint page styles */
+      .titlepage {
+        text-align: center;
+        margin-top: 45mm;
+        page-break-after: always;
+      }
+
+      .titlepage h1 {
+        font-size: 34pt;
+        letter-spacing: 0.5pt;
+        margin: 0 0 10mm 0;
+      }
+
+      .titlepage .subtitle {
+        font-size: 13.5pt;
+        font-style: italic;
+        margin-bottom: 40mm;
+      }
+
+      .titlepage .authors {
+        font-size: 12.5pt;
+        letter-spacing: 0.2pt;
+      }
+
+      .imprintpage {
+        page-break-after: always;
+        font-size: 10pt;
+        line-height: 1.35;
+      }
+
+      .imprintpage .center {
+        text-align: center;
+        margin-top: 60mm;
+      }
+    </style>
+    <div class="titlepage">
+      <h1>FAREWELL TO WESTPHALIA</h1>
+      <div class="subtitle">Crypto Sovereignty and Post‑Nation‑State Governance</div>
+      <div class="authors">JARRAD HOPE&nbsp;&nbsp;&nbsp;&nbsp;PETER LUDLOW</div>
+    </div>
+    <div class="imprintpage">
+      <div class="center">
+        Farewell to Westphalia: Crypto Sovereignty and Post‑Nation‑State Governance<br>
+        Published by Logos Press Engine<br>
+        Logos Collective Association, Baarerstrasse 10, 6300 Zug, Switzerland
+        <br><br>
+        Copyright ©2025, Jarrad Hope and Peter Ludlow.
+        <br><br>
+        This book is published under the Creative Commons Attribution‑ShareAlike 4.0 International License.<br>
+        Copy it, remix it, translate it, distribute it – just give credit and share alike.
+        <br><br>
+        ISBN: 978‑3‑9526275‑0‑1, 978‑3‑9526275‑1‑8 (print)<br>
+        ISBN: 978‑3‑9526275‑2‑5, 978‑3‑9526275‑3‑2 (digital)
+        <br><br>
+        POLITICAL SCIENCE / Privacy &amp; Surveillance<br>
+        BUSINESS &amp; ECONOMICS / Bitcoin &amp; Cryptocurrencies<br>
+        PHILOSOPHY / Political
+        <br><br>
+        Logos Press Engine
       </div>
-      <div class="md-sidebar-toc">
-<div class="md-toc">
-<details style="padding:0;;padding-left:0px;" open="">
+    </div>
+    # SBOHEM WESTFÁLSKO {#sbohem-westfálsko }
+    ## Kryptoměnová suverenita a správa věcí veřejných v postnárodním státě
+    {#kryptoměnová-suverenita-a-správa-věcí-veřejných-v-postnárodním-státě }
+    <hr>
+    <h2 id="úvod">Úvod </h2>
+    <p>Tato kniha se zabývá otázkou, jakým způsobem lidé spravují své společné záležitosti – tedy tím, čemu říkáme
+      lidské vládnutí (<em>human governance</em>). Autoři vycházejí z přesvědčení, že tradiční politické struktury,
+      zejména suverénní národní státy, představují technologii správy společnosti, která vznikla za zcela jiných
+      historických podmínek a která dnes naráží na své limity.</p>
+    <p>Od Vestfálského míru z roku 1648 se národní stát stal základním stavebním kamenem mezinárodního uspořádání. Tento
+      model však vznikl jako reakce na specifické konflikty raného novověku – především náboženské války v Evropě – a
+      nebyl nikdy navržen pro svět globálních sítí, digitálních technologií a transnacionálních problémů.</p>
+    <p>Autoři tvrdí, že blockchainové technologie a s nimi spojené nástroje (chytré kontrakty, decentralizované
+      databáze, DAO) představují nový druh infrastruktury, který umožňuje koordinaci lidské činnosti bez nutnosti
+      centralizované autority. Klíčovou myšlenkou knihy je, že nejvýznamnější aplikací blockchainu nebude finance, ale
+      právě správa lidských záležitostí.</p>
+    <div class="vysvetlivka">
+      <div class="vysvetlivka-title">Vysvětlivka 1 — Blockchain</div>
+      Blockchain je sdílená databáze (záznamová kniha), kterou současně drží mnoho účastníků sítě. Nové záznamy se
+      přidávají po „blocích“ a po uložení je velmi těžké je zpětně změnit, protože by se musela shodnout (nebo být
+      oklamána) velká část sítě. Prakticky to znamená transparentní a obtížně falšovatelný záznam událostí bez jediné
+      centrální autority.
+    </div>
+    <div class="vysvetlivka">
+      <div class="vysvetlivka-title">Vysvětlivka 2 — Chytré kontrakty (smart contracts)</div>
+      Chytrý kontrakt je program běžící na blockchainu, který automaticky provede předem daná pravidla („když nastane X,
+      proveď Y“). Nejde o „kontrakt“ v právním smyslu slova, ale o kód, který umí vynutit dohodnuté podmínky (např.
+      uvolnit platbu po splnění podmínky), aniž by musel zasahovat prostředník.
+    </div>
+    <div class="vysvetlivka">
+      <div class="vysvetlivka-title">Vysvětlivka 3 — Decentralizované databáze</div>
+      Decentralizovaná databáze nemá jeden centrální server, který vše kontroluje. Data jsou rozprostřena mezi více uzlů
+      a systém je navržen tak, aby fungoval i při výpadku některých z nich. Cílem je vyšší odolnost a menší závislost na
+      jednom „vlastníkovi“ infrastruktury.
+    </div>
+    <div class="vysvetlivka">
+      <div class="vysvetlivka-title">Vysvětlivka 4 — DAO (Decentralized Autonomous Organization)</div>
+      DAO je „organizace“ řízená souborem pravidel v chytrých kontraktech. Členové obvykle hlasují o návrzích a
+      rozhodnutí se pak automaticky provádějí podle nastavených pravidel (např. správa společného rozpočtu). V praxi jde
+      o pokus nahradit některé funkce klasických institucí transparentním a programovatelným procesem.
+    </div>
+    <hr>
+    <h1 id="kapitola-1">Kapitola 1 </h1>
+    <h2 id="úvod-1">Úvod </h2>
+    <h3 id="směřování-k-decentralizované-avšak-kooperativní-správě">Směřování k decentralizované, avšak kooperativní
+      správě </h3>
+    <p>Roku 1648 ukončil Vestfálský mír třicetiletou válku, během níž se katolíci a protestanti střetávali napříč
+      severní Evropou. Šlo o konflikt mimořádně ničivý – miliony lidí zahynuly nejen v boji, ale také v důsledku hladu a
+      nemocí. Vestfálské smlouvy nejen ukončily válku, ale zároveň položily základy moderního systému suverénních
+      národních států.</p>
+    <p>Zásadní myšlenkou tohoto uspořádání bylo, že to, co se odehrává uvnitř hranic státu, je jeho vnitřní záležitostí.
+      Tento princip skutečně přispěl k ukončení jednoho konkrétního konfliktu. Pokud se však podíváme na dějiny
+      následujících staletí – napoleonské války, války 19. století, dvě světové války a četné genocidy – je namístě
+      položit otázku, zda národní stát splnil své poslání.</p>
+    <p>Národní státy jsou lidské technologie určené k řešení ideologických, politických a náboženských konfliktů. Stejně
+      jako jiné technologie vzniklé v 17. století však nemusí představovat optimální řešení pro dnešní svět. Stejně jako
+      jsme překonali mechanické počítací stroje či kyvadlové hodiny, je legitimní ptát se, zda bychom nemohli překonat i
+      tehdejší politické technologie.</p>
+    <p>Od publikace bitcoinového whitepaperu v roce 2008 se diskuse o blockchainu soustředila především na finance.
+      Autoři této knihy však tvrdí, že skutečný potenciál blockchainu spočívá jinde: v umožnění decentralizované, avšak
+      koordinované lidské spolupráce v oblasti správy věcí veřejných.</p>
+    <div class="vysvetlivka">
+      <div class="vysvetlivka-title">Vysvětlivka 5 — „Bitcoinový whitepaper“</div>
+      Whitepaper je stručný technický dokument, který popisuje návrh systému a jeho principy. „Bitcoinový whitepaper“
+      (2008) je text, v němž autor pod pseudonymem Satoshi Nakamoto popsal, jak by mohla fungovat elektronická hotovost
+      bez banky či centrální autority.
+    </div>
+    <p>Pod pojmem lidské vládnutí rozumějí systémy a procesy, jejichž prostřednictvím lidé přijímají rozhodnutí o svých
+      komunitách a uvádějí tato rozhodnutí do praxe. Blockchain v tomto kontextu funguje jako nástroj, který umožňuje
+      sdílené, neměnné a transparentní záznamy bez centrální autority.</p>
+    <div class="vysvetlivka">
+      <div class="vysvetlivka-title">Vysvětlivka 6 — „Neměnné“ a „transparentní“ záznamy</div>
+      „Neměnné“ neznamená absolutně nezměnitelné za všech okolností, ale prakticky velmi těžko zpětně upravitelné bez
+      toho, aby to bylo vidět nebo bez získání výrazné kontroly nad systémem. „Transparentní“ znamená, že pravidla a
+      (často) i historie transakcí jsou ověřitelné; co přesně je veřejné, závisí na typu blockchainu.
+    </div>
+    <p>Centralizované systémy správy jsou náchylné ke korupci, tyranii a selhání v jednom bodě. Decentralizované systémy
+      jsou naproti tomu odolnější, avšak tradičně považované za neefektivní. Autoři argumentují, že blockchainové
+      technologie tuto domnělou výměnu mezi efektivitou a odolností překonávají.</p>
+    <p>Transparentní archivy, bezpečná komunikace a vymahatelnost slibů prostřednictvím chytrých kontraktů představují
+      základní stavební kameny nové formy správy. Stejně jako distribuované systémy v informatice dokáží fungovat i při
+      selhání jednotlivých uzlů, může i lidská správa fungovat bez centrální autority, pokud je správně navržena.</p>
+    <p>Vládnutí se neodehrává pouze na úrovni národních států, ale prostupuje celou společností – od mezinárodních
+      organizací přes místní samosprávy až po soukromé instituce. Právě proto mají technologie, které ovlivňují způsob
+      správy, zásadní dopad na lidskou prosperitu, svobodu a kulturní rozvoj.</p>
+    <p>Autoři uzavírají, že hlavní dělicí linií dneška není spor mezi socialismem a kapitalismem, ale mezi centralizací
+      a decentralizací. Cílem knihy je přispět k rozvoji technologií a hodnot, které umožní vznik decentralizovaných
+      forem správy a spolupráce v postvestfálském světě.</p>
+    <hr>
+    <h3 id="kapitola-2">Kapitola 2 </h3>
+    <h2 id="národní-státy-jsou-zastaralé-technologie-vládnutí">Národní státy jsou zastaralé technologie vládnutí </h2>
+    <hr>
+    <h3 id="21-úvodní-poznámky">2.1 Úvodní poznámky </h3>
+    <p>V roce 1994, během rwandské genocidy, se Immaculée Ilibagiza, příslušnice kmene Tutsi, skrývala v tajném prostoru
+      v domě svého pastora a naslouchala Hutuům ozbrojeným mačetami, jak po ní pátrají. Slyšela je, jak říkají, že je
+      třeba vyhladit tutsijské „šváby“, a poté: „Je tady… víme, že tu někde je. Najděte ji – najděte Immaculée.“</p>
+    <p>Immaculée slyšela jednoho z Hutuů, jak se chlubil, že už zabil 399 „švábů“, a že chce, aby mu pomohla dovršit
+      počet na rovných 400. Ve své knize <em>Left to Tell</em> popsala tuto zkušenost následovně:</p>
+    <blockquote>
+      <p>Pokusila jsem se polknout, ale hrdlo se mi sevřelo. Neměla jsem žádné sliny a ústa jsem měla sušší než písek.
+        Zavřela jsem oči a snažila se zmizet, ale jejich hlasy sílily. Věděla jsem, že nebudou mít žádné slitování, a v
+        mysli mi zněla jediná myšlenka: Jestli mě chytí, zabijí mě. Jestli mě chytí, zabijí mě. Jestli mě chytí, zabijí
+        mě.</p>
+    </blockquote>
+    <p>Když Immaculée po třech měsících konečně opustila své úkryty, dozvěděla se o rozsahu zkázy, která postihla její
+      rodinu a její kmen. Její otec, matka a dva ze tří bratrů byli brutálně zavražděni. Nespočet sousedů zahynul také.
+      Odhady počtu zabitých Tutsiů se pohybují mezi půl milionem a jedním milionem. Počet znásilněných tutsijských žen
+      se odhaduje mezi 200 000 a 250 000. Psychologické škody, které tato genocida zanechala na přeživších, jsou
+      nevyčíslitelné.</p>
+    <p>V bezprostřední reakci na tuto zvěrskost bylo přirozené hovořit o zlu hutuských vrahů – a jistě, tito pachatelé
+      nemohou a nesmí být zbaveni odpovědnosti. Zároveň je však nutné si všimnout, že k těmto událostem by možná vůbec
+      nedošlo, kdyby dva odlišné kmeny s rozdílnými kulturami a dějinami nebyly násilně „nacpány“ do hranic jednoho
+      národního státu, jehož hranice byly vytyčeny koloniálními evropskými mocnostmi.</p>
+    <p>Jakmile k tomuto násilnému uzavření došlo, otázkou se stalo, který z obou kmenů bude vládnout tomu druhému. Když
+      Rwandu ovládalo Německo, byla menšinová skupina Tutsiů dosazena k moci, což mělo důsledky, které zasely hlubokou
+      zášť a které nakonec vyústily v hrůznou genocidu roku 1994. Jinými slovy, bez ohledu na to, jaké výhody mohl mít
+      Vestfálský mír pro Evropu, pokus exportovat tuto politickou technologii do Afriky – při ignorování kmenových
+      hranic a vytváření nových, umělých hranic národních států – měl katastrofální následky.</p>
+    <p>Bohužel není rwandský příběh ojedinělý. I dnes je naše politická krajina plná příkladů etnických skupin, které
+      jsou nuceny žít společně v rámci jednoho národního státu, kde jedna skupina vládne nad druhou a kde to příliš
+      často vede k pokusům o genocidu. Moderní státy jsou i v době psaní této knihy dějištěm mnoha takových případů.</p>
+    <hr>
+    <h3 id="22-národní-státy-nejsou-jedinou-možností">2.2 Národní státy nejsou jedinou možností </h3>
+    <p>Někdy se zdá, jako by národní státy existovaly odjakživa. Před Organizací spojených národů tu přece byla
+      Společnost národů – a před ní musely existovat národy, ne? Přestože se dnes mohou národní státy jevit jako pevně
+      dané a neměnné, historicky tomu tak nebylo.</p>
+    <p>Ještě relativně nedávno lidé používali jiné systémy k politické a ekonomické organizaci. Existovala království a
+      městské státy, říše a vévodství, federace městských států, chalífáty, palatináty, papežské státy, klany, kmeny a
+      „národy“ lidí sdílejících společné dědictví, aniž by byli organizováni do států. Dokonce ještě před příchodem
+      evropských mocností byl celý severoamerický kontinent převážně organizován na kmenovém základě, přičemž se občas
+      objevovaly říše, které následně opět zanikly.</p>
+    <p>Faktem je, že národní státy jsou relativně novým vynálezem. Jde o formu vlády, která má své kořeny v
+      protestantsko-katolických válkách, jež po reformaci zachvátily severní Evropu, a která byla navržena k řešení
+      velmi konkrétního problému: jak zabránit tomu, aby konflikty o náboženství a ideologii zaplavily celé kontinenty a
+      pohltily vše, co jim stojí v cestě.</p>
+    <p>Jak jsme uvedli v první kapitole, národní státy v podobě, v jaké je známe dnes, vznikly roku 1648 uzavřením
+      Vestfálského míru – souborem smluv, které ukončily třicetiletou válku. Podle tradiční interpretace tento mír
+      zajistil stabilitu tím, že ustanovil zásadu, podle níž se nemáme příliš vměšovat do toho, co se děje uvnitř hranic
+      jednotlivých států. Národní hranice tak měly sloužit jako přepážky, které zabrání vlnám násilí v šíření napříč
+      kontinenty.</p>
+    <p>Ne všichni tuto interpretaci Vestfálského míru přijímají. Někteří kritici tvrdí, že tzv. „vestfálský mýtus“ byl
+      vytvořen proto, aby se existence národních států jevila jako nevyhnutelná a aby byly jiné možnosti politické
+      organizace předem diskvalifikovány. I v této knize vycházíme z předpokladu, že národní státy nejsou ani
+      nevyhnutelné, ani nutné. Jsou to lidské výtvory – a možná ne příliš povedené – navzdory jejich zakotvení v
+      mezinárodním právu.</p>
+    <p>Je důležité mít na paměti dvě věci. Zaprvé, pokud měly národní státy zabránit válkám náboženství a ideologií v
+      globálním měřítku, pak v tomto ohledu selhaly. Zadruhé, v mnoha případech situaci ještě zhoršují tím, že násilně
+      uzavírají skupiny lidí s rozdílnými zájmy a identitami do umělých hranic, kde jedna skupina zpravidla dominuje
+      druhé – což může vést k extrémním důsledkům, jaké jsme viděli v Rwandě.</p>
+    <hr>
+    <h3 id="23-jsou-národní-státy-špatné-ve-všem">2.3 Jsou národní státy špatné ve všem? </h3>
+    <p>Naším tvrzením zde není pouze to, že národní státy selhaly při ochraně lidských práv nebo při prevenci genocid,
+      náboženského útlaku a masového násilí – tedy v oblasti, pro niž byly původně vytvořeny. Tvrdíme, že se zdají být
+      špatné prakticky ve všech oblastech správy lidských záležitostí.</p>
+    <p>Zvažme například otázku národních měn. Pokud národní státy selhaly v ochraně lidských práv a v prevenci masových
+      zvěrstev, jsou alespoň dobré v zavádění a správě měn, které lidé používají pro ekonomickou činnost? Historická
+      zkušenost naznačuje, že nikoli. Měny pod kontrolou národních států se opakovaně ukázaly jako nespolehlivé a
+      nestabilní. Dějiny jsou plné případů, kdy národní měny zcela zkolabovaly.</p>
+    <p>Nejznámějším příkladem je kolaps německé měny ve Výmarské republice po první světové válce. Inflace tehdy dosáhla
+      hodnot přesahujících 30 000 %, což znamenalo, že ceny se zdvojnásobovaly během několika dní. Lidé pálili bankovky,
+      aby se zahřáli, protože jejich hodnota byla nižší než hodnota papíru, z něhož byly vyrobeny.</p>
+    <p>Nešlo však o ojedinělý případ. Po druhé světové válce dosáhla inflace v Maďarsku podle ekonomických odhadů
+      přibližně 41,9 kvadrilionu procent ročně, což znamenalo, že ceny se zdvojnásobovaly přibližně každých patnáct
+      hodin. V roce 2008 muselo Zimbabwe tisknout bankovky s nominální hodnotou přesahující jeden bilion. Mezi další
+      oběti hyperinflace patří řecká drachma, čínský jüan, chilské escudo, argentinské peso, peruánský sol, jugoslávský
+      dinár, běloruský rubl či angolská kwanza.</p>
+    <p>I když nedojde k hyperinflaci, zdánlivě mírná inflace ve výši dvou procent ročně dokáže v horizontu jednoho
+      lidského života zcela znehodnotit rodinný majetek, pokud je držen výhradně v národní měně.</p>
+    <p>Tyto skutečnosti neznamenají, že dřívější formy lidské organizace byly v otázce peněz úspěšnější. Již římský
+      císař Dioklecián znehodnocoval měnu ředěním obsahu stříbra v denáru. Pointou však není tvrdit, že hyperinflace je
+      výlučným problémem národních států, nýbrž že národní státy se ukázaly být mimořádně špatné v její prevenci.</p>
+    <p>To vše vede k zásadní otázce: proč by měly být měny vůbec pod kontrolou národních států?</p>
+    <hr>
+    <h3 id="24-zpochybnění-suverenity">2.4 Zpochybnění suverenity </h3>
+    <p>Tyto pochybnosti nejsou nové ani ojedinělé. Myšlenka suverénního národního státu se již delší dobu postupně
+      rozpadá. Začněme samotným pojmem suverenity. V reakci na události, jako byla rwandská genocida, začali mnozí
+      zpochybňovat moudrost absolutní státní suverenity. Rostoucí uznání univerzálních lidských práv podkopává
+      představu, že vnitřní záležitosti státu jsou výhradně jeho vlastní věcí.</p>
+    <p>Stále více se prosazuje názor, že porušování lidských práv by mělo být řešeno mezinárodním společenstvím, i když
+      k němu dochází uvnitř hranic suverénního státu. Tento posun již není pouze teoretický – promítá se do
+      mezinárodního práva i do vzniku institucí, které si nárokují právo zasahovat v případech válečných zločinů či
+      genocidy.</p>
+    <p>Kromě lidských práv existuje rostoucí množství dalších problémů, které narušují tradiční pojetí suverenity.
+      Environmentální otázky, jako je znečištění ovzduší či vody, jsou svou povahou nadnárodní. Znečištěný vzduch ani
+      kontaminované řeky nerespektují státní hranice. Pokud jsou toxické látky vypouštěny do vodních toků jednoho státu,
+      rychle se dostávají do oceánů a ovlivňují celý planetární systém.</p>
+    <p>Podobně i v ekonomické oblasti vedou regionální bloky a obchodní dohody k omezení schopnosti států vykonávat
+      plnou suverenitu. Vstup do mezinárodních obchodních dohod nevyhnutelně znamená přijetí mechanismů řešení sporů,
+      které omezují možnost jednostranného rozhodování.</p>
+    <p>Dalším faktorem je proměna bezpečnostního prostředí. Vzestup nestátních aktérů, teroristických sítí a
+      nadnárodních kriminálních organizací vedl mnohé k závěru, že žádný stát dnes není schopen zajistit svou bezpečnost
+      izolovaně. I zde dochází k přenášení suverénních pravomocí na nové formy centralizované nebo nadnárodní moci.</p>
+    <hr>
+    <h3 id="25-hledání-alternativ">2.5 Hledání alternativ </h3>
+    <p>Výše uvedené trendy ukazují, že národní státy a tradiční mezinárodní organizace již nejsou jedinými aktéry
+      globální správy. Na světové scéně došlo k jakési „kambrické explozi“ nových forem vládnutí, z nichž mnohé fungují
+      napříč státními hranicemi a bez ohledu na ně.</p>
+    <p>Moc a autorita se v současném světě stále častěji přesouvají k aktérům, kteří nejsou národními státy. Mezinárodní
+      kartely, nadnárodní korporace, teroristické organizace i digitální sítě dokáží v některých regionech vykonávat
+      větší faktickou kontrolu než formální státní instituce.</p>
+    <p>Tyto struktury často přebírají role, které byly tradičně spojovány se státem: vybírají daně, zajišťují
+      bezpečnost, poskytují sociální služby nebo regulují ekonomickou činnost. Bez ohledu na to, zda tyto aktivity
+      hodnotíme pozitivně či negativně, nelze přehlédnout, že zásadně narušují vestfálský model světa založený výhradně
+      na suverénních národních státech.</p>
+    <p>Otázka proto nezní, zda se svět odklání od vestfálského řádu, ale jaké alternativy jej nahradí. Hledáme formy
+      správy, které minimalizují nedůvěru, umožňují skutečné sebeurčení komunit a zároveň poskytují bezpečný mechanismus
+      „odchodu“ v situacích, kdy společné uspořádání selhává.</p>
+    <p>V následujících kapitolách se autoři obracejí k technologickým inovacím – zejména k blockchainovým technologiím –
+      jako k jednomu z možných základů těchto nových forem postnárodní správy.</p>
+    <hr>
+    <h2 id="poznámky-k-pojmům">Poznámky k pojmům </h2>
+    <p><strong>Národní stát (Nation state)</strong><br>
+      Politická jednotka, která spojuje státní suverenitu s představou jednotného národa sdílejícího jazyk, kulturu nebo
+      identitu. Autoři tento koncept chápou jako historickou technologii správy společnosti, nikoli jako přirozený či
+      nevyhnutelný stav.</p>
+    <p><strong>Vestfálský řád (Westphalian order)</strong><br>
+      Systém mezinárodních vztahů založený na principech státní suverenity a nevměšování se do vnitřních záležitostí
+      států, formálně ustavený Vestfálským mírem roku 1648.</p>
+    <p><strong>Kettling (doslova „nahnání do kotle“)</strong><br>
+      Metafora používaná autory pro nucené uzavření odlišných etnických, kulturních či náboženských skupin do společného
+      politického prostoru bez možnosti sebeurčení nebo bezpečného odchodu.</p>
+    <hr>
+    <h1 id="kapitola-3">Kapitola 3 </h1>
+    <h2 id="poststátní-vládnutí">Poststátní vládnutí </h2>
+    <hr>
+    <h3 id="31-úvodní-poznámky">3.1 Úvodní poznámky </h3>
+    <p>V roce 1695 zřídili Britové opěrný bod na karibském ostrově New Providence na Bahamách. Původně se jmenoval
+      Charles Town, později byl přejmenován na Nassau – a tak se jmenuje dodnes. Když v roce 1701 vypukla válka o
+      španělské dědictví, rozhořely se konflikty napříč Evropou a brzy se přelily i do Karibiku. Po
+      francouzsko‑španělských nájezdech Britové roku 1706 opěrný bod opustili. Následně se ho zmocnili karibští piráti a
+      vytvořili zde základnu, která fungovala až do roku 1718, kdy Britové město znovu dobyli.</p>
+    <p>Během této doby vznikla struktura známá jako Republika pirátů. Nešlo o stát v tradičním smyslu, ale o
+      decentralizovaný systém správy založený na dohodách, hlasování a kodexech. Piráti měli vlastní pravidla
+      rozdělování kořisti, volili kapitány a uplatňovali relativně rovnostářské mechanismy rozhodování. Mezi známé členy
+      této komunity patřili Edward „Černovous“ Teach, Charles Vane, „Calico Jack“ Rackham, Stede Bonnet či „Black Sam“
+      Bellamy.</p>
+    <p>Tyto pirátské kodexy představují raný příklad samosprávy mimo rámec národních států. Hakim Bey je ve své knize
+      <em>T.A.Z.: The Temporary Autonomous Zone</em> popsal jako příklady dočasných autonomních zón – struktur, které
+      vznikají v mezerách moci, fungují po určitou dobu a poté zanikají.</p>
+    <p>Dnes však sledujeme situaci, kdy státy z různých důvodů – technologických, ekonomických i geopolitických –
+      postupně opouštějí části své tradiční suverenity. Otázka tedy nezní, zda bude vládnutí existovat i mimo stát, ale
+      jak bude vypadat v době, kdy stát ztrácí monopol na výkon moci.</p>
+    <hr>
+    <h3 id="32-některé-příklady-z-kambrické-exploze">3.2 Některé příklady z kambrické exploze </h3>
+    <p>Jak se vestfálský model rozpadá, nevzniká jedna náhrada, ale celé spektrum nových forem správy. Autoři tento
+      proces přirovnávají ke kambrické explozi: rychlému a nekoordinovanému vzniku různorodých struktur, které přebírají
+      části tradičních státních funkcí.</p>
+    <p>Mezi tyto formy patří menší územní jednotky – města, regiony, zvláštní správní oblasti či daňové okrsky – které
+      získávají pravomoci v oblasti infrastruktury, regulace nebo výběru poplatků. V USA jsou typickým příkladem tzv.
+      <em>special taxing districts</em>, které mohou poskytovat veřejné služby nezávisle na klasické obecní správě.</p>
+    <p>Existují však i struktury nadnárodní. Evropská unie postupně vytvořila vlastní právní řád a rozhodovací
+      mechanismy, které v mnoha oblastech omezují suverenitu členských států. Suverenita se tak stává rozvrstvenou a
+      sdílenou.</p>
+    <p>Další oblastí je bezpečnost. V některých městech přebírají část policejních funkcí soukromé subjekty, často se
+      souhlasem místních samospráv. Podobně fungují i rezidenční sdružení typu HOA (Homeowners Association), která
+      regulují chování, majetek a poplatky svých členů.</p>
+    <p>Tyto příklady ukazují, že poststátní svět není světem bez vládnutí, ale světem s mnoha překrývajícími se vrstvami
+      správy.</p>
+    <hr>
+    <h3 id="33-sharding-nestačí">3.3 Sharding nestačí </h3>
+    <p>Na první pohled by se mohlo zdát, že řešením je prosté dělení velkých států na menší jednotky. Menší jednotky
+      však nejsou automaticky demokratičtější. Pokud zůstanou centralizované, zůstávají snadno ovladatelné a zranitelné
+      vůči korupci či nátlaku.</p>
+    <p>Autoři upozorňují, že mnohé menší správní celky jsou manipulovány shora – ze strany států či jiných mocenských
+      struktur. Sharding vládnutí je tedy tolerován pouze tehdy, pokud jednotlivé části zůstávají kontrolovatelné.</p>
+    <p>Proto je podle autorů nutné jít dál než k pouhému dělení moci. Skutečně poststátní správa musí být
+      decentralizovaná nejen formálně, ale i technicky. Právě zde vstupují do hry blockchainové technologie, které
+      umožňují transparentní, auditovatelnou a distribuovanou koordinaci bez centrální autority.</p>
+    <hr>
+    <h2 id="poznámky-k-pojmům-1">Poznámky k pojmům </h2>
+    <p><strong>Post‑state governance (poststátní vládnutí)</strong><br>
+      Formy správy a koordinace, které nevycházejí z monopolní suverenity národního státu, ale z komunitních, smluvních
+      či technologických struktur.</p>
+    <p><strong>TAZ – Temporary Autonomous Zone</strong><br>
+      Pojem Hakima Beye označující dočasné autonomní struktury vznikající v mezerách moci.</p>
+    <p><strong>Sharding</strong><br>
+      Rozdělení systému na menší části; autoři upozorňují, že bez skutečné decentralizace zůstává i rozdělený systém
+      centralizovaný.</p>
+
+    <h1 id="kapitola-4">Kapitola 4 </h1>
+    <h2 id="nové-konceptuální-základy">Nové konceptuální základy </h2>
+    <hr>
+    <h3 id="41-úvodní-poznámky">4.1 Úvodní poznámky </h3>
+    <p>V předchozích dvou kapitolách jsme probírali řadu nových (i starších) forem poststátní správy, které se objevily
+      v posledních desetiletích. Mnohé z nich však nejsou dobrými „řešeními“ selhávání vestfálského vládnutí – spíše
+      jsou jeho symptomy. Je samozřejmé, že si nemyslíme, že drogové kartely, polovojenské organizace či teroristické
+      sítě představují pozitivní vývoj lidského vládnutí.</p>
+    <p>To vše vede k otázce, co vlastně hledat. Jaké jsou pozitivní možnosti? K čemu bychom měli směřovat?</p>
+    <p>Chceme-li určit, co by mělo být naším cílem, je užitečné začít tím, jaké chyby nechceme opakovat. O těchto
+      selháních jsme už mluvili poměrně podrobně. Nechceme systém, v němž jsou lidé s různými hodnotami „nahnáni do
+      kotle“ uvnitř určitého území a nuceni řídit se sadou hodnot, které nesdílejí. Lidé by neměli být vězni své
+      geografie ani vězni tyrana, který ovládá dění uvnitř libovolně nakreslených hranic. Lidé by měli mít možnost
+      odejít z nepřátelských vládních systémů. A také by měli být schopni žít mimo zkorumpované systémy, v nichž
+      centralizované autority zneužívají své mocenské postavení k osobnímu prospěchu.</p>
+    <p>Pokud má být blockchain relevantní pro lidské vládnutí, pak proto, že slibuje infrastrukturu, která snižuje
+      prostor pro centralizované zneužití moci: umožňuje sdílené, ověřitelné a (prakticky) těžko zpětně manipulovatelné
+      záznamy, programovatelná pravidla a nové formy koordinace. Než však přejdeme k návrhům, je třeba si vyjasnit
+      konceptuální základ: jaké hodnoty, cíle a principy má postvestfálské vládnutí sledovat.</p>
+    <p>V této kapitole se proto podíváme na dva historicky významné „internetové“ proudy, které tyto hodnoty pomáhaly
+      formovat. Jedním z nich jsou cypherpunks a jejich důraz na soukromí jednotlivce. Druhým jsou hacktivisté a jejich
+      důraz na transparentnost institucí, které drží moc.</p>
+    <hr>
+    <h3 id="42-cypherpunks-a-soukromí">4.2 Cypherpunks a soukromí </h3>
+    <p>Na úsvitu raného internetu se objevila skupina aktivistů známá jako cypherpunks. Jejich hlavní obavou bylo, že se
+      internet může velmi snadno stát nástrojem univerzálního dohledu a útlaku – a proto vyvíjeli nástroje, které umožní
+      zachovat soukromí i v online prostoru.</p>
+    <p>Jedním z takových nástrojů, které z cypherpunkového prostředí vzešly, bylo Pretty Good Privacy (PGP): šifrovací
+      protokol „vojenské úrovně“, který vyvinul Phillip Zimmermann a který umožnil lidem komunikovat bez strachu ze
+      sledování – ať už ze strany diktátorů, tyranů, nebo jiných škodlivých aktérů. Cypherpunks však nepřinesli jen
+      nástroje; artikulovali také filozofii, která v dalších letech pomáhala určovat směr internetu. A to bylo důležité:
+      i když internet zdaleka není dokonalým ochráncem soukromí, věci mohly být mnohem horší.</p>
+    <p>Jedním z klíčových textů hnutí byl „Cypherpunk Manifesto“, který napsal Eric Hughes v roce 1993. Hughesova
+      základní teze zněla, že aby mohla fungovat otevřená společnost, musí některé věci zůstat soukromé – například
+      rozhovory či výměny mezi jednotlivci. „Soukromí je nezbytné pro otevřenou společnost v elektronickém věku,“ píše
+      Hughes.</p>
+    <p>Podle Hughese otevřená společnost vyžaduje, aby lidé mohli jednat a komunikovat s kým chtějí, aniž by celý svět
+      znal obsah výměny – nebo dokonce to, mezi kým proběhla. Proč je to kritické? Protože se můžeme bát následků
+      komunikace s nepopulární osobou, nebo se můžeme bát veřejně sdílet nové myšlenky, které se vymykají běžně
+      přijímaným názorům, a které by mohly vyvolat odpor a diskriminaci. Není náhoda, že Leonardo da Vinci psal část
+      svých rukopisů v kódu (zrcadlovým písmem a vlastní zkratkou). Podobně Charles Darwin po celé desetiletí pečlivě
+      střežil rukopis <em>O původu druhů</em> – v daném okamžiku to bylo příliš provokativní.</p>
+    <p>Hughes to shrnuje větou: „Soukromí je moc selektivně (zdůraznění v originále) odhalovat sám sebe světu.“ Tyto
+      historické příklady pro něj nebyly jen kuriozitou – ukazují, že prostor pro myšlenky a pro dialog často potřebuje
+      ochrannou vrstvu soukromí.</p>
+    <p>V manifestu Hughes upozorňuje, že lidé bránili své soukromí po staletí šeptáním, tmou, obálkami, zavřenými
+      dveřmi, tajnými znameními a kurýry. Minulé technologie však silné soukromí neumožňovaly – elektronické technologie
+      ano.</p>
+    <p>To cypherpunks vedlo k praktickému závěru a k praktické akci. Jejich role měla být jednoduchá: „Cypherpunks píší
+      kód.“ Věděli, že někdo musí napsat software, který bude soukromí bránit – a protože bez toho soukromí mít
+      nebudeme, rozhodli se ho napsat.</p>
+    <p>Cypherpunks nepsali jen kód; vytvořili také jednu z nejranějších online komunit – a dokonce jednu z nejranějších
+      distribuovaných online komunit. Roku 1992 založili mailing list, na němž diskutovali témata spojená zejména s
+      kryptografií a s jejími politickými důsledky. Roku 1997 jej pak převedli do distribuované podoby, aby se vyhnuli
+      závislosti na jednom bodě selhání.</p>
+    <p>Mailing list cypherpunků byl „kdo je kdo“ raného internetu a pozdějšího web3. Vedle klíčových cypherpunků (Eric
+      Hughes, Tim May, John Gilmore) na něm figurovali i Julian Assange (WikiLeaks), více zakladatelů Electronic
+      Frontier Foundation, Richard Stallman (Free Software Foundation), Nick Szabo (autor konceptu chytrých kontraktů),
+      Satoshi Nakamoto (Bitcoin) a Hal Finney.</p>
+    <p>Soukromí však není jedinou částí rovnice. Aby mohla existovat svobodná společnost, potřebuje nejen soukromí
+      jednotlivců, ale také určitou míru transparentnosti a kontroly nad institucemi, které drží moc. To nás vede k
+      hacktivistům.</p>
+    <div class="vysvetlivka">
+      <div class="vysvetlivka-title">Vysvětlivka — PGP (Pretty Good Privacy)</div>
+      PGP je systém pro šifrování a podepisování zpráv (typicky e-mailů a souborů). Šifrování chrání obsah před čtením
+      třetí stranou; digitální podpis umožňuje ověřit, kdo zprávu poslal a že nebyla po cestě změněna.
+    </div>
+    <div class="vysvetlivka">
+      <div class="vysvetlivka-title">Vysvětlivka — Cypherpunks</div>
+      Cypherpunks je hnutí (a komunita) kombinující kryptografii a politický aktivismus. Jeho základní intuice zní:
+      chcete-li chránit svobodu v digitálním věku, musíte mít k dispozici praktické technické nástroje (zejména
+      šifrování), nikoli jen deklarace a zákony.
+    </div>
+    <hr>
+    <h3 id="43-hacktivisté-a-transparentnost">4.3 Hacktivisté a transparentnost </h3>
+    <p>Zatímco cypherpunks se soustředili na soukromí jednotlivců, jiné skupiny se soustředily na transparentnost vlád a
+      dalších institucí, které nad námi mají moc (například soukromých zpravodajských agentur). Tyto skupiny kritizovaly
+      skryté vládní aktivity a – co je důležitější – vyvíjely nástroje, které dokáží „posvítit“ na metody, jimiž
+      tradiční centralizované moci utlačují druhé. Stejně důležité bylo, že vyvíjely nástroje, které narušují iluzi
+      neporazitelnosti těchto mocí. A ukázaly, že politické jednání může být stejně reálné a „hmatatelné“ i tehdy, když
+      je zprostředkované digitální komunikací.</p>
+    <p>Než budeme pokračovat, je užitečné vyjasnit, co tím autoři myslí slovem „hacktivista“. „Hacktivista“ je složenina
+      slov „hacker“ a (politický) „aktivista“. To však vyvolává otázku, co je to „hacker“ – a hlavně, co to není. Hacker
+      nemusí být nutně člověk, který se věnuje výhradně nelegálním počítačovým aktivitám. V původnějším smyslu jde spíše
+      o někoho, kdo umí kreativně pracovat se systémy, hledat jejich slabiny, obcházet omezení a používat technologie
+      způsoby, které nebyly zamýšlené.</p>
+    <p>V tomto světle je hacktivismus politickým využitím „hackerství“: jde o to, jak technické dovednosti aplikovat na
+      veřejné záležitosti – například na odhalování tajných praktik, na boj proti cenzuře, nebo na narušování nástrojů
+      útlaku.</p>
+    <p>Hacktivistické projekty (ať už jde o odhalovací platformy, nástroje pro anonymitu, nebo kampaně proti cenzuře)
+      často míří na asymetrii informací: centralizované moci těží z toho, že vědí mnoho o občanech, zatímco občané vědí
+      málo o tom, co dělají mocní. Transparentnost v tomto kontextu není jen „morální požadavek“, ale praktický
+      mechanismus, který ztěžuje zneužití moci.</p>
+    <p>Autoři zdůrazňují, že soukromí a transparentnost nejsou protiklady, ale dvě strany téže věci. Soukromí chrání
+      jednotlivce před šikanou, perzekucí a „chilling effect“ (tedy před tím, že se lidé raději přestanou vyjadřovat,
+      protože se bojí následků). Transparentnost naopak omezuje svévoli mocných tím, že umožňuje kontrolu a veřejné
+      vyhodnocování.</p>
+    <hr>
+    <h3 id="44-digitálně-zprostředkované-bezhraniční-vládnutí">4.4 Digitálně zprostředkované, bezhraniční vládnutí </h3>
+    <p>Posledním prvkem, který autoři v této kapitole zdůrazňují, je fakt, že digitální komunikace umožňuje lidem nejen
+      organizovat se online, ale také organizovat se napříč hranicemi. V vestfálském modelu je vládnutí pevně svázáno s
+      územím. Digitální sítě však umožňují vznik komunit, které jsou definovány vztahy a spoluprací, nikoli geografií.
+    </p>
+    <p>To má důsledky jak pro soukromí, tak pro transparentnost – ale i pro samotný koncept politické příslušnosti.
+      Pokud se lidé mohou koordinovat, přijímat pravidla a vynucovat je prostřednictvím digitální infrastruktury,
+      otevírá se prostor pro „bezhraniční“ formy vládnutí: pro systémy, které nejsou vázány na jednu jurisdikci, a které
+      mohou konkurovat tradičním státům nebo je obcházet.</p>
+    <p>Autoři zde upozorňují, že i když může být lákavé mluvit o „síťových státech“ (network states) či o digitálních
+      státech, samotný pojem „stát“ s sebou nese historickou zátěž. Ať už jde o národní stát nebo o síťový stát, stále
+      je to „stát“ – a tedy i struktura, která typicky zahrnuje monopolní nárok na pravidla, hranice a vynucení.</p>
+    <p>Jejich přístup je jiný: místo toho, aby jako výchozí model brali stát, navrhují brát jako výchozí model
+      alternativní formy organizace. Základním stavebním kamenem postvestfálského uspořádání nemusejí být „státy“, ale
+      spíše komunity: dobrovolná sdružení lidí, která se organizují kolem sdílených pravidel a hodnot – a která umožňují
+      reálnou možnost odchodu.</p>
+    <p>Tento rámec připravuje půdu pro následující kapitoly: pokud chceme navrhnout robustní poststátní vládnutí,
+      potřebujeme jasné cíle (současně chránit soukromí a prosazovat transparentnost), potřebujeme technické nástroje
+      (kryptografii, chytré kontrakty, auditovatelné záznamy) a potřebujeme organizační principy (dobrovolnost, možnost
+      odchodu, konkurence pravidel).</p>
+    <div class="vysvetlivka">
+      <div class="vysvetlivka-title">Vysvětlivka — „Chilling effect“</div>
+      „Chilling effect“ označuje situaci, kdy lidé omezují své projevy a chování nikoli proto, že by jim to někdo přímo
+      zakázal, ale proto, že se bojí možných následků (například sledování, postihu, ztráty práce nebo společenské
+      ostrakizace).
+    </div>
+
+  </div>
+  <div class="md-sidebar-toc">
+    <div class="md-toc">
+      <details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#sbohem-westfálsko" class="md-toc-link"><p>SBOHEM WESTFÁLSKO</p>
-</a>
-          </summary>
+          <a href="#sbohem-westfálsko" class="md-toc-link">
+            <p>SBOHEM WESTFÁLSKO</p>
+          </a>
+        </summary>
         <div>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#kryptoměnová-suverenita-a-správa-věcí-veřejných-v-postnárodním-státě" class="md-toc-link">
-            <p>Kryptoměnová suverenita a správa věcí veřejných v postnárodním státě</p>
+            <a href="#kryptoměnová-suverenita-a-správa-věcí-veřejných-v-postnárodním-státě" class="md-toc-link">
+              <p>Kryptoměnová suverenita a správa věcí veřejných v postnárodním státě</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#úvod" class="md-toc-link">
-            <p>Úvod</p>
+            </a>
+          </div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+            <a href="#úvod" class="md-toc-link">
+              <p>Úvod</p>
 
-          </a></div>
+            </a>
+          </div>
         </div>
       </details>
-    <details style="padding:0;;padding-left:0px;" open="">
+      <details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#kapitola-1" class="md-toc-link"><p>Kapitola 1</p>
-</a>
-          </summary>
+          <a href="#kapitola-1" class="md-toc-link">
+            <p>Kapitola 1</p>
+          </a>
+        </summary>
         <div>
           <details style="padding:0;;padding-left:24px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#úvod-1" class="md-toc-link"><p>Úvod</p>
-</a>
-          </summary>
-        <div>
+            <summary class="md-toc-link-wrapper">
+              <a href="#úvod-1" class="md-toc-link">
+                <p>Úvod</p>
+              </a>
+            </summary>
+            <div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#směřování-k-decentralizované-avšak-kooperativní-správě" class="md-toc-link">
+                  <p>Směřování k decentralizované, avšak kooperativní správě</p>
+
+                </a>
+              </div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#kapitola-2" class="md-toc-link">
+                  <p>Kapitola 2</p>
+
+                </a>
+              </div>
+            </div>
+          </details>
+          <details style="padding:0;;padding-left:24px;" open="">
+            <summary class="md-toc-link-wrapper">
+              <a href="#národní-státy-jsou-zastaralé-technologie-vládnutí" class="md-toc-link">
+                <p>Národní státy jsou zastaralé technologie vládnutí</p>
+              </a>
+            </summary>
+            <div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#21-úvodní-poznámky" class="md-toc-link">
+                  <p>2.1 Úvodní poznámky</p>
+
+                </a>
+              </div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#22-národní-státy-nejsou-jedinou-možností" class="md-toc-link">
+                  <p>2.2 Národní státy nejsou jedinou možností</p>
+
+                </a>
+              </div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#23-jsou-národní-státy-špatné-ve-všem" class="md-toc-link">
+                  <p>2.3 Jsou národní státy špatné ve všem?</p>
+
+                </a>
+              </div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#24-zpochybnění-suverenity" class="md-toc-link">
+                  <p>2.4 Zpochybnění suverenity</p>
+
+                </a>
+              </div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#25-hledání-alternativ" class="md-toc-link">
+                  <p>2.5 Hledání alternativ</p>
+
+                </a>
+              </div>
+            </div>
+          </details>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#směřování-k-decentralizované-avšak-kooperativní-správě" class="md-toc-link">
-            <p>Směřování k decentralizované, avšak kooperativní správě</p>
+            <a href="#poznámky-k-pojmům" class="md-toc-link">
+              <p>Poznámky k pojmům</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#kapitola-2" class="md-toc-link">
-            <p>Kapitola 2</p>
-
-          </a></div>
+            </a>
+          </div>
         </div>
       </details>
-    <details style="padding:0;;padding-left:24px;" open="">
+      <details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#národní-státy-jsou-zastaralé-technologie-vládnutí" class="md-toc-link"><p>Národní státy jsou zastaralé technologie vládnutí</p>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#21-úvodní-poznámky" class="md-toc-link">
-            <p>2.1 Úvodní poznámky</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#22-národní-státy-nejsou-jedinou-možností" class="md-toc-link">
-            <p>2.2 Národní státy nejsou jedinou možností</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#23-jsou-národní-státy-špatné-ve-všem" class="md-toc-link">
-            <p>2.3 Jsou národní státy špatné ve všem?</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#24-zpochybnění-suverenity" class="md-toc-link">
-            <p>2.4 Zpochybnění suverenity</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#25-hledání-alternativ" class="md-toc-link">
-            <p>2.5 Hledání alternativ</p>
-
-          </a></div>
-        </div>
-      </details>
-    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#poznámky-k-pojmům" class="md-toc-link">
-            <p>Poznámky k pojmům</p>
-
-          </a></div>
-        </div>
-      </details>
-    <details style="padding:0;;padding-left:0px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#kapitola-3" class="md-toc-link"><p>Kapitola 3</p>
-</a>
-          </summary>
+          <a href="#kapitola-3" class="md-toc-link">
+            <p>Kapitola 3</p>
+          </a>
+        </summary>
         <div>
           <details style="padding:0;;padding-left:24px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#poststátní-vládnutí" class="md-toc-link"><p>Poststátní vládnutí</p>
-</a>
-          </summary>
-        <div>
+            <summary class="md-toc-link-wrapper">
+              <a href="#poststátní-vládnutí" class="md-toc-link">
+                <p>Poststátní vládnutí</p>
+              </a>
+            </summary>
+            <div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#31-úvodní-poznámky" class="md-toc-link">
+                  <p>3.1 Úvodní poznámky</p>
+
+                </a>
+              </div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#32-některé-příklady-z-kambrické-exploze" class="md-toc-link">
+                  <p>3.2 Některé příklady z kambrické exploze</p>
+
+                </a>
+              </div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#33-sharding-nestačí" class="md-toc-link">
+                  <p>3.3 Sharding nestačí</p>
+
+                </a>
+              </div>
+            </div>
+          </details>
           <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#31-úvodní-poznámky" class="md-toc-link">
-            <p>3.1 Úvodní poznámky</p>
+            <a href="#poznámky-k-pojmům-1" class="md-toc-link">
+              <p>Poznámky k pojmům</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#32-některé-příklady-z-kambrické-exploze" class="md-toc-link">
-            <p>3.2 Některé příklady z kambrické exploze</p>
-
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#33-sharding-nestačí" class="md-toc-link">
-            <p>3.3 Sharding nestačí</p>
-
-          </a></div>
+            </a>
+          </div>
         </div>
       </details>
-    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#poznámky-k-pojmům-1" class="md-toc-link">
-            <p>Poznámky k pojmům</p>
-
-          </a></div>
-        </div>
-      </details>
-    <details style="padding:0;;padding-left:0px;" open="">
+      <details style="padding:0;;padding-left:0px;" open="">
         <summary class="md-toc-link-wrapper">
-          <a href="#kapitola-4" class="md-toc-link"><p>Kapitola 4</p>
-</a>
-          </summary>
+          <a href="#kapitola-4" class="md-toc-link">
+            <p>Kapitola 4</p>
+          </a>
+        </summary>
         <div>
           <details style="padding:0;;padding-left:24px;" open="">
-        <summary class="md-toc-link-wrapper">
-          <a href="#nové-konceptuální-základy" class="md-toc-link"><p>Nové konceptuální základy</p>
-</a>
-          </summary>
-        <div>
-          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#41-úvodní-poznámky" class="md-toc-link">
-            <p>4.1 Úvodní poznámky</p>
+            <summary class="md-toc-link-wrapper">
+              <a href="#nové-konceptuální-základy" class="md-toc-link">
+                <p>Nové konceptuální základy</p>
+              </a>
+            </summary>
+            <div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#41-úvodní-poznámky" class="md-toc-link">
+                  <p>4.1 Úvodní poznámky</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#42-cypherpunks-a-soukromí" class="md-toc-link">
-            <p>4.2 Cypherpunks a soukromí</p>
+                </a>
+              </div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#42-cypherpunks-a-soukromí" class="md-toc-link">
+                  <p>4.2 Cypherpunks a soukromí</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#43-hacktivisté-a-transparentnost" class="md-toc-link">
-            <p>4.3 Hacktivisté a transparentnost</p>
+                </a>
+              </div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#43-hacktivisté-a-transparentnost" class="md-toc-link">
+                  <p>4.3 Hacktivisté a transparentnost</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#44-digitálně-zprostředkované-bezhraniční-vládnutí" class="md-toc-link">
-            <p>4.4 Digitálně zprostředkované, bezhraniční vládnutí</p>
+                </a>
+              </div>
+              <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+                <a href="#44-digitálně-zprostředkované-bezhraniční-vládnutí" class="md-toc-link">
+                  <p>4.4 Digitálně zprostředkované, bezhraniční vládnutí</p>
 
-          </a></div>
+                </a>
+              </div>
+            </div>
+          </details>
+
         </div>
       </details>
-    
-        </div>
-      </details>
-    
-</div>
-</div>
-      <a id="sidebar-toc-btn">≡</a>
-    
-    
-    
-    
-    
-    
-<script>
 
-var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
-sidebarTOCBtn.addEventListener('click', function(event) {
-  event.stopPropagation()
-  if (document.body.hasAttribute('html-show-sidebar-toc')) {
-    document.body.removeAttribute('html-show-sidebar-toc')
-  } else {
-    document.body.setAttribute('html-show-sidebar-toc', true)
-  }
-})
-</script>
-      
-  
-    </body></html>
+    </div>
+  </div>
+  <a id="sidebar-toc-btn">≡</a>
+
+
+
+
+
+
+  <script>
+
+    var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+    sidebarTOCBtn.addEventListener('click', function (event) {
+      event.stopPropagation()
+      if (document.body.hasAttribute('html-show-sidebar-toc')) {
+        document.body.removeAttribute('html-show-sidebar-toc')
+      } else {
+        document.body.setAttribute('html-show-sidebar-toc', true)
+      }
+    })
+  </script>
+
+
+</body>
+
+</html>
